@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jasmine Ramsten Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
 
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+
+      /* 🌌 Bakgrund: din uppladdade matta */
+      background-image: url('b54ab32948516642d4ba31fcaf4bfcdb.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* 🔲 Overlay för läsbar text */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header {
+      font-family: 'Montserrat', sans-serif;
+      color: #f2e9ff;
+      font-size: 3.7rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      user-select: none;
+      text-align: center;
+    }
+
+    .description {
+      max-width: 740px;
+      font-size: 1.7rem;
+      line-height: 2.0;
+      text-align: center;
+      color: #e0d3f7;
+      margin-bottom: 50px;
+    }
+
+    .buttons-container {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      max-width: 700px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      background-color: #7b3fbf;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 140px;
+      flex: 0 1 auto;
+    }
+
+    .button:hover {
+      background-color: #61309c;
+    }
+
+    @media (max-width: 500px) {
+      .button {
+        flex: 1 1 100%;
+      }
+
+      .buttons-container {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Jasmine Ramsten</header>
+  <div class="description">
+    A dynamic communicator that makes memorable artistry happen.
+    With a passion for music from a growth mindset will my combination of creative concepts and data-driven strategy capture an audience
+  </div>
+
+  <div class="buttons-container">
+    <a href="#" class="button" target="_blank" rel="noopener noreferrer">CV</a>
+    <a href="#" class="button" target="_blank" rel="noopener noreferrer">CL</a>
+    <a href="#" class="button" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</body>
+</html>
