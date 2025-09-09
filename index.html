@@ -43,7 +43,7 @@
 
     .text-section {
       flex: 1 1 300px;
-      margin-top: 40px; /* Flyttar ner texten lite */
+      margin-top: 40px;
     }
 
     .text-section h1 {
@@ -92,7 +92,7 @@
 
     .box {
       background-color: #fff;
-      border: 2px solid #ddd;
+      border: 2px solid #fefefe;
       padding: 30px 70px;
       text-align: center;
       width: 150px;
@@ -105,9 +105,9 @@
     }
 
     .box:hover {
-      background-color: #0077b5;
+      background-color: #8b25ca;
       color: white;
-      border-color: #0077b5;
+      border-color: #0300b5;
       transform: translateY(-5px);
     }
 
@@ -122,11 +122,42 @@
         margin-top: 20px;
       }
     }
+
+    #scroll-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: transparent; 
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #scroll-content {
+      display: flex;
+      animation: scroll-left 100s linear infinite;
+    }
+
+    #scroll-content img {
+      height: 80px;
+      margin-right: 100px;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(3%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   </style>
 </head>
 
 <body>
-
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQT5F9J"
@@ -141,8 +172,9 @@
         <p>
           A dynamic marketer aspiring to create memorable artistry. 
           With a passion for music, a growth mindset, and a deep understanding of audience connection, 
-            I craft strategies that don’t just grow numbers — they build long-lasting artistry
+          I craft strategies that don’t just grow numbers — they build long-lasting artistry
         </p>
+        
       </div>
       <div class="polaroid">
         <img src="profilbild.jpg" alt="Jasmine Ramsten">
@@ -153,73 +185,35 @@
   <div class="box-container">
     <a href="cv.pdf" class="box" target="_blank">CV</a>
     <a href="portfolio.html" class="box" target="_blank">CL</a>
-    <a href="https://www.linkedin.com/in/jasmineramsten" class="box" target="_blank">LinkedIn</a>
+ <a href="https://www.linkedin.com/in/jasmine-ramsten-a43254205/" class="box" target="_blank">LinkedIn</a>
+ </div>
+
+  <div id="scroll-container">
+    <div id="scroll-content">
+      <img src="us.png" alt="ikon1">
+      <img src="tbf.png" alt="ikon2">
+      <img src="lgr.jpeg" alt="ikon3">
+      <img src="ln.png" alt="ikon4">
+      <img src="idol.png" alt="ikon5">
+      <img src="ms.jpeg" alt="ikon5">
+      <img src="fm.svg" alt="ikon5">
+    <div></div>
+      <img src="us.png" alt="ikon1">
+      <img src="tbf.png" alt="ikon2">
+      <img src="lgr.jpeg" alt="ikon3">
+      <img src="ln.png" alt="ikon4">
+      <img src="idol.png" alt="ikon5">
+      <img src="ms.jpeg" alt="ikon5">
+      <img src="fm.svg" alt="ikon5">
+       <div></div>
+      <img src="us.png" alt="ikon1">
+      <img src="tbf.png" alt="ikon2">
+      <img src="lgr.jpeg" alt="ikon3">
+      <img src="ln.png" alt="ikon4">
+      <img src="idol.png" alt="ikon5">
+      <img src="ms.jpeg" alt="ikon5">
+      <img src="fm.svg" alt="ikon5">
+    </div>
   </div>
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rullande bildrad</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Dölj horisontell scroll */
-  }
-  #scroll-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* justera höjden efter behov */
-    background: #222; /* valfri bakgrund */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  #scroll-content {
-    display: flex;
-    animation: scroll-left 20s linear infinite;
-  }
-  #scroll-content img {
-    height: 80px; /* justera bildstorleken */
-    margin-right: 20px;
-  }
-
-  /* Animation som rullar innehållet från höger till vänster */
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-</style>
-</head>
-<body>
-
-<div id="scroll-container">
-  <div id="scroll-content">
-    <!-- Bilder läggs in här -->
-    <img src="Berghs VSC/image1.jpg" alt="Bild 1" />
-    <img src="Berghs VSC/image2.jpg" alt="Bild 2" />
-    <img src="Berghs VSC/image3.jpg" alt="Bild 3" />
-    <img src="Berghs VSC/image4.jpg" alt="Bild 4" />
-    <img src="Berghs VSC/image5.jpg" alt="Bild 5" />
-    <!-- Du kan lägga till fler bilder här -->
-    <!-- Vi duplicerar bilderna för en sömlös rullning -->
-    <img src="Berghs VSC/image1.jpg" alt="Bild 1" />
-    <img src="Berghs VSC/image2.jpg" alt="Bild 2" />
-    <img src="Berghs VSC/image3.jpg" alt="Bild 3" />
-    <img src="Berghs VSC/image4.jpg" alt="Bild 4" />
-    <img src="Berghs VSC/image5.jpg" alt="Bild 5" />
-  </div>
-</div>
-
-</body>
-</html>
-
 </body>
 </html>
