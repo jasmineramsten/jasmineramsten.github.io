@@ -27,6 +27,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Analytics Script (load before page content) -->
     <script src="js/analytics.js"></script>
 </head>
+<script>
+document.addEventListener("mouseup", function() {
+  var selectedText = window.getSelection().toString().trim();
+  if (selectedText.length > 0) {
+    dataLayer.push({
+      event: 'textselected',
+      selectedText: selectedtext
+    });
+  }
+});
+</script>
 <body>
    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQT5F9J"
