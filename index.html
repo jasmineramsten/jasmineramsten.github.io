@@ -40,10 +40,12 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.25rem, 7vw, 4rem);
-            margin: 0 0 0.5rem;
-            letter-spacing: -1px;
-            line-height: 1.1;
+            font-family: "Snell Roundhand", "Apple Chancery", "Brush Script MT", cursive;
+            font-size: clamp(4rem, 13vw, 10rem);
+            font-weight: 400;
+            margin: 0 0 0.35rem;
+            letter-spacing: 0;
+            line-height: 0.9;
         }
 
         .hero h2 {
@@ -133,6 +135,31 @@
             line-height: 1.6;
         }
 
+        .intern-role {
+            padding-top: 14px;
+            margin: 0;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text);
+        }
+
+        .intern-date {
+            padding-top: 2px;
+            margin: 0;
+            font-size: 0.86rem;
+            color: #6b7280;
+        }
+
+        .edu-content ul {
+            margin: 0;
+            padding: 14px 0 0 18px;
+        }
+
+        .edu-content li {
+            margin: 0 0 8px;
+            line-height: 1.6;
+        }
+
         .edu-item.active .icon {
             transform: rotate(45deg);
         }
@@ -182,6 +209,41 @@
             color: var(--muted);
         }
 
+        .site-footer {
+            margin-top: 96px;
+            border-top: none;
+            padding: 42px 24px 56px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .footer-left h3 {
+            margin: 0;
+            font-size: clamp(2.2rem, 7vw, 4.2rem);
+            line-height: 0.95;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .footer-right p,
+        .footer-right a {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 1024px) {
             .portfolio-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -212,6 +274,16 @@
 
             .course-image {
                 height: 190px;
+            }
+
+            .site-footer {
+                margin-top: 64px;
+                padding: 32px 18px 40px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
             }
         }
     </style>
@@ -296,6 +368,101 @@
             </a>
         </div>
     </section>
+
+    <section class="education-section">
+        <h2 class="title">INTERNSHIPS</h2>
+
+        <div class="edu-item">
+            <div class="edu-header" role="button" tabindex="0" aria-expanded="false">
+                <h3>BOCO ATELIER</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="edu-content">
+                <p class="intern-role">Growth marketer</p>
+                <p class="intern-date">Jan 2026 - Currently</p>
+                <ul>
+                    <li>Performance marketing for Meta, increasing web sessions with 125%</li>
+                    <li>Brand strategy and visual identity</li>
+                    <li>Web optimization and A/B testings to increase conversions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-header" role="button" tabindex="0" aria-expanded="false">
+                <h3>LUGER & LIVE NATION</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="edu-content">
+                <p class="intern-role">Marketing assistant</p>
+                <p class="intern-date">Mar 2022 - Aug 2022</p>
+                <ul>
+                    <li>Content strategy and creation for Way Out West, Are Sessions and Summerburst social media channels</li>
+                    <li>Administrative management and web optimization for luger.sea and the Way Out West-app</li>
+                    <li>Assisting in preparation and coordination of artist briefs</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-header" role="button" tabindex="0" aria-expanded="false">
+                <h3>UNTIED STAGE</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="edu-content">
+                <p class="intern-role">Production assistant</p>
+                <p class="intern-date">Nov 2021 - Dec 2021</p>
+                <ul>
+                    <li>Backstage assisting coordinator for the Tim Bergling Foundation, honoring his memory, music and mental health awareness</li>
+                    <li>Content creation and copy for Instagram</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-header" role="button" tabindex="0" aria-expanded="false">
+                <h3>TCHIKANA</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="edu-content">
+                <p class="intern-role">Production assistant</p>
+                <p class="intern-date">Jun 2021 - Jul 2021</p>
+                <ul>
+                    <li>Production work for 12 TILL 12 AdenXAsme Part 3</li>
+                    <li>Booking of props, catering, styling and scheduling via excel</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-header" role="button" tabindex="0" aria-expanded="false">
+                <h3>FREMANTLE MEDIA</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="edu-content">
+                <p class="intern-role">Production assistant</p>
+                <p class="intern-date">Dec 2019 - Feb 2021</p>
+                <ul>
+                    <li>Production and stage assistant for Masked Singer Sweden</li>
+                    <li>Artist and backstage hostess for Swedish Idol</li>
+                    <li>Backstage hostess for Sommarkrysset</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <h3>CONTACT ME</h3>
+            </div>
+            <div class="footer-right">
+                <p>jasmineramsten@live.se</p>
+                <p>+46 70 878 56 56</p>
+                <a href="https://linkedin.com/jasmine-ramsten" target="_blank" rel="noopener noreferrer">linkedin.com/jasmine-ramsten</a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const headers = document.querySelectorAll('.edu-header');
