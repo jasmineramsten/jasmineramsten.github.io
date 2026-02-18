@@ -77,7 +77,7 @@
             margin-top: 0;
             padding: 14px 28px;
             background-color: var(--accent);
-            color: #fff;
+            color: #000;
             text-decoration: none;
             border-radius: 999px;
             font-weight: 700;
@@ -97,8 +97,27 @@
             padding: 0 24px;
         }
 
-        .hero + .about-section {
-            margin-top: 70px;
+        .about-statement {
+            max-width: 1200px;
+            margin: 70px auto 0;
+            padding: 0 24px;
+        }
+
+        .about-statement p {
+            margin: 0;
+            background: #fff;
+            color: #000;
+            font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
+            font-size: clamp(2rem, 7vw, 5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.96;
+            letter-spacing: 0.5px;
+            padding: clamp(24px, 4vw, 44px);
+        }
+
+        .about-statement + .about-section {
+            margin-top: 18px;
         }
 
         .about-layout {
@@ -334,6 +353,11 @@
                 padding: 0 18px;
             }
 
+            .about-statement {
+                margin: 42px auto 0;
+                padding: 0 18px;
+            }
+
             .about-layout {
                 grid-template-columns: 1fr;
                 gap: 24px;
@@ -375,11 +399,15 @@
         <h2>Growth Marketer</h2>
     </section>
 
+    <section class="about-statement">
+        <p>POWER GREAT BRANDS WITH EVEN GREATER MARKETING</p>
+    </section>
+
     <section class="about-section">
         <div class="about-layout">
             <div class="about-copy">
                 <h2>ABOUT ME</h2>
-                <p>Jag heter Jasmine Ramsten och arbetar med growth marketing i skärningen mellan kreativitet och analys. Jag bygger strategier, producerar innehåll och optimerar digitala flöden för att skapa tydlig affärseffekt. Mitt mål är att fortsätta utvecklas i roller där jag får kombinera varumärkesbyggande med mätbar tillväxt och skapa starka upplevelser som både kunder och företag vinner på.</p>
+                <p>Growth Marketing student driven by how data reflects real human behavior. By crafting creative strategies that drive engagement, I aim to both meet an audience’s needs while sparking a new demand. My goal is therefore to analyze what truly engages an audience and maximize those insights to ensure memorable campaigns and sustain growth</p>
             </div>
             <div class="about-visual">
                 <img class="about-photo" src="K.jpg" alt="Jasmine Ramsten">
