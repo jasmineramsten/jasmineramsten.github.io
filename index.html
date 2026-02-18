@@ -13,6 +13,7 @@
             --accent: #111827;
             --hero-a: #f5f7fa;
             --hero-b: #c3cfe2;
+            --card: #f4f1eb;
         }
 
         * {
@@ -77,13 +78,15 @@
             transform: translateY(-2px);
         }
 
-        .education-section {
-            max-width: 860px;
-            margin: 80px auto;
-            padding: 0 20px;
+        .education-section,
+        .portfolio-section {
+            max-width: 1200px;
+            margin: 90px auto;
+            padding: 0 24px;
         }
 
-        .education-section h2.title {
+        .education-section h2.title,
+        .portfolio-section h2.title {
             font-size: clamp(1.5rem, 4vw, 2rem);
             border-bottom: 2px solid #111;
             padding-bottom: 10px;
@@ -134,13 +137,81 @@
             transform: rotate(45deg);
         }
 
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .course-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            min-height: 0;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+        }
+
+        .course-label {
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin: 0 0 14px;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 260px;
+            border-radius: 12px;
+            border: 2px dashed #b7b7b7;
+            object-fit: cover;
+            display: block;
+            background: #f3f4f6;
+            padding: 6px;
+        }
+
+        .client-label {
+            margin: 2px 0 18px;
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+        }
+
         @media (max-width: 640px) {
-            .education-section {
+            .education-section,
+            .portfolio-section {
                 margin: 56px auto;
+                padding: 0 18px;
             }
 
             .edu-header {
                 align-items: flex-start;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .course-card {
+                min-height: 300px;
+                padding: 16px;
+            }
+
+            .course-image {
+                height: 190px;
             }
         }
     </style>
@@ -187,6 +258,42 @@
             <div class="edu-content">
                 <p>Upper secondary education specializing in journalism, media production, and copywriting with honors in English 7. Final merit 22.5.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <h2 class="title">PROJECT CASES</h2>
+        <div class="portfolio-grid">
+            <a class="course-card" href="projekt.html">
+                <p class="course-label">Kurs 1</p>
+                <p class="client-label">Kund 1</p>
+                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 1">
+            </a>
+            <a class="course-card" href="projekt.html">
+                <p class="course-label">Kurs 2</p>
+                <p class="client-label">Kund 2</p>
+                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 2">
+            </a>
+            <a class="course-card" href="projekt.html">
+                <p class="course-label">Kurs 3</p>
+                <p class="client-label">Kund 3</p>
+                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 3">
+            </a>
+            <a class="course-card" href="projekt.html">
+                <p class="course-label">Kurs 4</p>
+                <p class="client-label">Kund 4</p>
+                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 4">
+            </a>
+            <a class="course-card" href="projekt.html">
+                <p class="course-label">Kurs 5</p>
+                <p class="client-label">Kund 5</p>
+                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 5">
+            </a>
+            <a class="course-card" href="projekt.html">
+                <p class="course-label">Kurs 6</p>
+                <p class="client-label">Kund 6</p>
+                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 6">
+            </a>
         </div>
     </section>
 
