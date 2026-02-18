@@ -32,38 +32,33 @@
             min-height: 100svh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: start;
-            text-align: center;
+            justify-content: space-between;
+            align-items: stretch;
             background: #ffffff;
-            padding: 12px 24px 8px;
+            padding: 24px;
             overflow: hidden;
         }
 
-        .hero h1 {
+        .hero-left,
+        .hero-right {
             font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
             text-transform: uppercase;
-            font-size: clamp(2.4rem, 8.8vw, 8rem);
+            font-size: clamp(2rem, 7vw, 6rem);
             font-weight: 900;
-            margin: 0 0 0.35rem;
-            letter-spacing: 0;
-            line-height: 0.95;
-            white-space: nowrap;
-            max-width: 100%;
-            padding: 0 12px;
+            line-height: 0.9;
+            letter-spacing: -0.5px;
         }
 
-        .hero h2 {
-            font-size: clamp(2rem, 6.4vw, 3rem);
-            width: 100%;
-            text-align: right;
-            align-self: flex-end;
-            font-weight: 300;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .hero-left {
             margin: 0;
-            padding-right: 8px;
+            color: #000;
+            text-align: left;
+        }
+
+        .hero-right {
+            margin: 0;
+            color: #000;
+            text-align: right;
         }
 
         .intro {
@@ -397,8 +392,8 @@
 </head>
 <body>
     <section class="hero">
-        <h1>Jasmine Ramsten</h1>
-        <h2>Growth Marketer</h2>
+        <p class="hero-left">GROWTH MARKTING<br>PORTFOLIO</p>
+        <p class="hero-right">JASMINE<br>RAMSTEN</p>
     </section>
 
     <section class="about-statement">
