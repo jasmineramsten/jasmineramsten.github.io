@@ -236,7 +236,8 @@
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 28px;
+            column-gap: 28px;
+            row-gap: 56px;
         }
 
         .course-card {
@@ -258,7 +259,7 @@
         .course-label {
             font-size: 1.02rem;
             font-weight: 700;
-            margin: 0 0 14px;
+            margin: 0 0 4px;
         }
 
         .course-image {
@@ -279,7 +280,7 @@
         }
 
         .client-label {
-            margin: 2px 0 18px;
+            margin: 0 0 18px;
             font-size: 0.88rem;
             color: var(--muted);
         }
