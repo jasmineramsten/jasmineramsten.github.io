@@ -137,6 +137,37 @@
             max-width: 42ch;
         }
 
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .about-tags.secondary {
+            margin-top: 36px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .about-tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            background: #e5e7eb;
+            color: #374151;
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .about-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         .about-visual {
             display: flex;
             flex-direction: column;
@@ -405,6 +436,25 @@
             <div class="about-copy">
                 <h2>ABOUT ME</h2>
                 <p>Growth Marketing student driven by how data reflects real human behavior. By crafting creative strategies that drive engagement, I aim to both meet an audience’s needs while sparking a new demand. My goal is therefore to analyze what truly engages an audience and maximize those insights to ensure memorable campaigns and sustain growth</p>
+                <div class="about-tags">
+                    <span class="about-tag">Well structured</span>
+                    <span class="about-tag">Growth focused</span>
+                    <span class="about-tag">Dynamic</span>
+                    <span class="about-tag">Socially engaged</span>
+                    <span class="about-tag">Audience-focused but brand-centered</span>
+                </div>
+                <div class="about-tags secondary">
+                    <div class="about-tags-row">
+                        <span class="about-tag">GA4</span>
+                        <span class="about-tag">GTM</span>
+                        <span class="about-tag">Shopify</span>
+                        <span class="about-tag">Looker Studio</span>
+                    </div>
+                    <div class="about-tags-row">
+                        <span class="about-tag">Lucky Orange</span>
+                        <span class="about-tag">Meta Ads Manager</span>
+                    </div>
+                </div>
             </div>
             <div class="about-visual">
                 <img class="about-photo" src="K.jpg" alt="Jasmine Ramsten">
