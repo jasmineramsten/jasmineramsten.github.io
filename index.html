@@ -254,6 +254,26 @@
             text-decoration: underline;
         }
 
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 6px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+        }
+
+        .social-link svg {
+            width: 100%;
+            height: 100%;
+            fill: #000;
+        }
+
         @media (max-width: 1024px) {
             .portfolio-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -465,7 +485,18 @@
             <div class="footer-right">
                 <p>jasmineramsten@live.se</p>
                 <p>+46 70 878 56 56</p>
-                <a href="https://linkedin.com/in/jasmine-ramsten" target="_blank" rel="noopener noreferrer">linkedin.com/jasmine-ramsten</a>
+                <div class="social-links">
+                    <a class="social-link linkedin-link" href="https://www.linkedin.com/in/jasmine-ramsten" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.37V9h3.4v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
+                        </svg>
+                    </a>
+                    <a class="social-link instagram-link" href="https://www.instagram.com/jasmineramsten/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9zm9.6 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
