@@ -59,7 +59,7 @@
             color: var(--muted);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 0 0 1.5rem;
+            margin: 0 0 clamp(90px, 18vh, 180px);
         }
 
         .intro {
@@ -71,7 +71,7 @@
 
         .cv-button {
             display: inline-block;
-            margin-top: 22px;
+            margin-top: 0;
             padding: 14px 28px;
             background-color: var(--accent);
             color: #fff;
@@ -205,12 +205,18 @@
         .course-image {
             width: 100%;
             height: 260px;
-            border-radius: 12px;
-            border: 2px dashed #b7b7b7;
+            border-radius: 14px;
+            border: none;
             object-fit: cover;
             display: block;
-            background: #f3f4f6;
-            padding: 6px;
+            background: transparent;
+            padding: 0;
+            filter: grayscale(100%);
+            transition: filter 0.25s ease;
+        }
+
+        .course-card:hover .course-image {
+            filter: grayscale(0%);
         }
 
         .client-label {
@@ -385,7 +391,7 @@
             <a class="course-card" href="projekt.html">
                 <p class="course-label">CRM & CX</p>
                 <p class="client-label">Stadium</p>
-                <img class="course-image" src="bild-jasmine.JPG" alt="Projektbild 5">
+                <img class="course-image" src="S.png" alt="Projektbild 5">
             </a>
             <a class="course-card" href="projekt.html">
                 <p class="course-label">YOU</p>
