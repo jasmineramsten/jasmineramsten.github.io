@@ -30,10 +30,7 @@
 
         .hero {
             min-height: 100svh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: stretch;
+            position: relative;
             background: #ffffff;
             padding: 24px;
             overflow: hidden;
@@ -53,12 +50,18 @@
             margin: 0;
             color: #000;
             text-align: left;
+            position: absolute;
+            top: 24px;
+            left: 24px;
         }
 
         .hero-right {
             margin: 0;
             color: #000;
             text-align: right;
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
         }
 
         .intro {
@@ -424,7 +427,7 @@
 <body>
     <section class="hero">
         <p class="hero-left">GROWTH MARKTING<br>PORTFOLIO</p>
-        <p class="hero-right">JASMINE<br>RAMSTEN</p>
+        <p class="hero-right">JASMINE RAMSTEN</p>
     </section>
 
     <section class="about-statement">
@@ -641,6 +644,7 @@
 
     <script>
         const headers = document.querySelectorAll('.edu-header');
+
         function toggleItem(header) {
             const item = header.parentElement;
             const content = item.querySelector('.edu-content');
