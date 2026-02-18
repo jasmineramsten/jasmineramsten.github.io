@@ -33,7 +33,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            align-items: center;
+            align-items: start;
             text-align: center;
             background: #ffffff;
             padding: clamp(80px, 18vh, 220px) 24px clamp(8px, 2vh, 20px);
@@ -55,6 +55,9 @@
 
         .hero h2 {
             font-size: clamp(1rem, 3.2vw, 1.5rem);
+            width: 100%;
+            text-align: center;
+            align-self: center;
             font-weight: 300;
             color: var(--muted);
             text-transform: uppercase;
@@ -86,6 +89,7 @@
             transform: translateY(-2px);
         }
 
+        .about-section,
         .education-section,
         .portfolio-section {
             max-width: 1200px;
@@ -93,8 +97,43 @@
             padding: 0 24px;
         }
 
-        .hero + .education-section {
-            margin-top: 180px;
+        .hero + .about-section {
+            margin-top: 70px;
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .about-copy h2 {
+            margin: 0 0 18px;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            letter-spacing: 1px;
+        }
+
+        .about-copy p {
+            margin: 0;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            color: var(--muted);
+            max-width: 42ch;
+        }
+
+        .about-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .about-photo {
+            width: 100%;
+            max-height: 1520px;
+            object-fit: cover;
+            border-radius: 18px;
         }
 
         .education-section h2.title,
@@ -288,10 +327,16 @@
         }
 
         @media (max-width: 640px) {
+            .about-section,
             .education-section,
             .portfolio-section {
                 margin: 56px auto;
                 padding: 0 18px;
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
 
             .edu-header {
@@ -328,7 +373,19 @@
     <section class="hero">
         <h1>Jasmine Ramsten</h1>
         <h2>Growth Marketer</h2>
-        <a href="CV - Jasmine Ramsten.pdf" download class="cv-button">Download my CV</a>
+    </section>
+
+    <section class="about-section">
+        <div class="about-layout">
+            <div class="about-copy">
+                <h2>ABOUT ME</h2>
+                <p>Jag heter Jasmine Ramsten och arbetar med growth marketing i skärningen mellan kreativitet och analys. Jag bygger strategier, producerar innehåll och optimerar digitala flöden för att skapa tydlig affärseffekt. Mitt mål är att fortsätta utvecklas i roller där jag får kombinera varumärkesbyggande med mätbar tillväxt och skapa starka upplevelser som både kunder och företag vinner på.</p>
+            </div>
+            <div class="about-visual">
+                <img class="about-photo" src="K.jpg" alt="Jasmine Ramsten">
+                <a href="CV - Jasmine Ramsten.pdf" download class="cv-button">Download my CV</a>
+            </div>
+        </div>
     </section>
 
     <section class="education-section">
