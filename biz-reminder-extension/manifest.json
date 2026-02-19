@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Spotify Top Tracks",
+  "version": "1.0",
+  "description": "Visa Spotify Top Tracks direkt i popupen",
+  "permissions": [
+    "alarms",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}
