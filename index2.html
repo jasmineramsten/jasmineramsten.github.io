@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Slumpmässiga Användare – Professionell</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1a1a1a;
+  }
+
+  h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin: 30px 0;
+    font-weight: 600;
+  }
+
+  /* Container för användarna */
+  .user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 40px 40px 40px;
+  }
+
+  .user-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  .user-card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #1a73e8;
+  }
+
+  .user-info p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #333;
+  }
+
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    background: #1a73e8;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #155ab6;
+  }
+
+  @media (max-width: 1200px) {
+    .user-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      padding: 0 20px 20px 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .user-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      padding: 0 10px 10px 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Slumpmässiga Användare</h1>
+<button id="loadUsers">Hämta nya användare</button>
+<div class="user-grid" id="userGrid"></div>
+
+<script>
+const loadBtn = document.getElementById("loadUsers");
+const userGrid = document.getElementById("userGrid");
+
+function createUserCard(user) {
+  const card = document.createElement("div");
+  card.classList.add("user-card");
+  card.innerHTML = `
+    <img src="${user.picture.large}" alt="Profilbild">
+    <div class="user-info">
+      <p><strong>${user.name.first} ${user.name.last}</strong></p>
+      <p>${user.email}</p>
+      <p>${user.location.city}, ${user.location.country}</p>
+    </div>
+  `;
+  return card;
+}
+
+function loadUsers(count = 12) {
+  fetch(`https://randomuser.me/api/?results=${count}`)
+    .then(response => response.json())
+    .then(data => {
+      userGrid.innerHTML = "";
+      data.results.forEach(user => {
+        const card = createUserCard(user);
+        userGrid.appendChild(card);
+      });
+    })
+    .catch(err => console.error("Fel vid hämtning:", err));
+}
+
+// Initial load
+loadUsers();
+
+// Ladda nya användare vid knapptryck
+loadBtn.addEventListener("click", () => loadUsers());
+</script>
+
+</body>
+</html>

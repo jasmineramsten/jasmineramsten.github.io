@@ -6,8 +6,8 @@
     <title>Jasmine Ramsten | Growth Marketer</title>
     <style>
         :root {
-            --text: #1f2937;
-            --muted: #4b5563;
+            --text: #000000;
+            --muted: #000000;
             --surface: #ffffff;
             --line: #e5e7eb;
             --accent: #111827;
@@ -28,11 +28,53 @@
             scroll-behavior: smooth;
         }
 
+        .top-banner {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .top-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-banner a {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 0.84rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            transition: transform 0.22s ease;
+        }
+
+        .top-banner a:hover {
+            transform: scale(1.08);
+        }
+
+        #about-me,
+        #education,
+        #project-cases,
+        #internships,
+        #contact {
+            scroll-margin-top: 86px;
+        }
+
         .hero {
-            min-height: 100svh;
+            min-height: calc(100svh - 62px);
             position: relative;
             background: #ffffff;
-            padding: 24px;
+            padding: 16px 24px 12px;
             overflow: hidden;
         }
 
@@ -51,8 +93,9 @@
             color: #000;
             text-align: left;
             position: absolute;
-            top: 24px;
+            top: 16px;
             left: 24px;
+            z-index: 2;
         }
 
         .hero-right {
@@ -61,7 +104,29 @@
             text-align: right;
             position: absolute;
             right: 24px;
-            bottom: 24px;
+            bottom: 12px;
+            z-index: 2;
+        }
+
+        .hero-image-placeholder {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            height: clamp(240px, 48vh, 440px);
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            background: #f9fafb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 1;
         }
 
         .intro {
@@ -104,14 +169,16 @@
 
         .about-statement p {
             margin: 0;
+            text-align: center;
             background: #fff;
             color: #000;
             font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
-            font-size: clamp(2rem, 7vw, 5rem);
+            font-size: clamp(1rem, 3.5vw, 2.5rem);
             font-weight: 900;
             text-transform: uppercase;
             line-height: 0.96;
             letter-spacing: 0.5px;
+            white-space: nowrap;
             padding: clamp(24px, 4vw, 44px);
         }
 
@@ -159,7 +226,7 @@
             justify-content: center;
             border-radius: 999px;
             background: #e5e7eb;
-            color: #374151;
+            color: #000;
             padding: 8px 14px;
             font-size: 0.9rem;
             white-space: nowrap;
@@ -245,7 +312,7 @@
             padding-top: 2px;
             margin: 0;
             font-size: 0.86rem;
-            color: #6b7280;
+            color: #000;
         }
 
         .edu-content ul {
@@ -425,16 +492,27 @@
     </style>
 </head>
 <body>
+    <nav class="top-banner" aria-label="Section navigation">
+        <div class="top-banner-inner">
+            <a href="#about-me">ABOUT ME</a>
+            <a href="#education">EDUCATION</a>
+            <a href="#project-cases">PROJECT CASES</a>
+            <a href="#internships">INTERNSHIPS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
     <section class="hero">
         <p class="hero-left">GROWTH MARKETING<br>PORTFOLIO</p>
+        <div class="hero-image-placeholder">Image</div>
         <p class="hero-right">JASMINE RAMSTEN</p>
     </section>
 
     <section class="about-statement">
-        <p>POWER GREAT BRANDS WITH EVEN GREATER MARKETING</p>
+        <p>POWER GREAT BRANDS<br>WITH EVEN GREATER MARKETING</p>
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about-me">
         <div class="about-layout">
             <div class="about-copy">
                 <h2>ABOUT ME</h2>
@@ -466,7 +544,7 @@
         </div>
     </section>
 
-    <section class="education-section">
+    <section class="education-section" id="education">
         <h2 class="title">EDUCATION</h2>
 
         <div class="edu-item">
@@ -500,7 +578,7 @@
         </div>
     </section>
 
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="project-cases">
         <h2 class="title">PROJECT CASES</h2>
         <div class="portfolio-grid">
             <a class="course-card" href="projekt.html">
@@ -536,7 +614,7 @@
         </div>
     </section>
 
-    <section class="education-section">
+    <section class="education-section" id="internships">
         <h2 class="title">INTERNSHIPS</h2>
 
         <div class="edu-item">
@@ -618,7 +696,7 @@
         </div>
     </section>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
         <div class="footer-inner">
             <div class="footer-left">
                 <h3>CONTACT ME</h3>
@@ -644,6 +722,21 @@
 
     <script>
         const headers = document.querySelectorAll('.edu-header');
+        const hero = document.querySelector('.hero');
+        const heroLeft = document.querySelector('.hero-left');
+        const heroRight = document.querySelector('.hero-right');
+        const heroPlaceholder = document.querySelector('.hero-image-placeholder');
+
+        function positionHeroPlaceholder() {
+            if (!hero || !heroLeft || !heroRight || !heroPlaceholder) return;
+            const heroRect = hero.getBoundingClientRect();
+            const leftRect = heroLeft.getBoundingClientRect();
+            const rightRect = heroRight.getBoundingClientRect();
+            const centerY = (leftRect.bottom + rightRect.top) / 2;
+            heroPlaceholder.style.top = `${centerY - heroRect.top}px`;
+        }
+
+        positionHeroPlaceholder();
 
         function toggleItem(header) {
             const item = header.parentElement;
@@ -666,6 +759,7 @@
         });
 
         window.addEventListener('resize', () => {
+            positionHeroPlaceholder();
             document.querySelectorAll('.edu-item.active .edu-content').forEach((content) => {
                 content.style.maxHeight = `${content.scrollHeight}px`;
             });
