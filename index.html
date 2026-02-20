@@ -72,69 +72,70 @@
 
         .hero {
             min-height: calc(100svh - 62px);
-            position: relative;
-            background: #ffffff;
-            padding: 16px 24px 12px;
-            overflow: hidden;
-        }
-
-        .hero-left,
-        .hero-right {
-            font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
-            text-transform: uppercase;
-            font-size: clamp(2rem, 7vw, 6rem);
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-left {
-            margin: 0;
-            color: #000;
-            text-align: left;
-            position: absolute;
-            top: 16px;
-            left: 24px;
-            z-index: 2;
-        }
-
-        .hero-right {
-            margin: 0;
-            color: #000;
-            text-align: right;
-            position: absolute;
-            right: 24px;
-            bottom: 12px;
-            z-index: 2;
-        }
-
-        .hero-image-placeholder {
-            position: absolute;
-            left: 24px;
-            right: 24px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: auto;
-            height: clamp(240px, 48vh, 440px);
-            border: 2px solid #d1d5db;
-            border-radius: 10px;
-            background: #f9fafb;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            color: #9ca3af;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            z-index: 1;
+            background: #ffffff;
+            padding: 14px 24px 28px;
         }
 
-        .hero-image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
+        .hero-welcome {
+            width: min(1200px, 100%);
+            min-height: calc(100svh - 110px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            color: #000;
+        }
+
+        .hero-welcome-top {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(2.73rem, 8.06vw, 9.1rem);
+            line-height: 0.95;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        .hero-welcome-bottom {
+            margin: 0;
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: clamp(3.38rem, 10.4vw, 10.92rem);
+            line-height: 0.9;
+            font-weight: 500;
+            text-transform: lowercase;
+        }
+
+        .hero-welcome-year {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 0.3em;
+            vertical-align: super;
+            margin-left: 8px;
+        }
+
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            align-items: end;
+            text-align: left;
+            margin-top: 26px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: clamp(0.62rem, 0.95vw, 0.88rem);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .hero-meta-center {
+            text-align: center;
+        }
+
+        .hero-meta-right {
+            text-align: right;
         }
 
         .intro {
@@ -181,7 +182,7 @@
             background: #fff;
             color: #000000;
             font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
-            font-size: clamp(1rem, 3.5vw, 2.5rem);
+            font-size: clamp(1.4rem, 4.8vw, 3.4rem);
             font-weight: 900;
             text-transform: uppercase;
             line-height: 0.96;
@@ -192,6 +193,43 @@
 
         .about-statement + .about-section {
             margin-top: 56px;
+        }
+
+        .power-titles {
+            max-width: 1200px;
+            margin: 10px auto 0;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 56px;
+            text-align: center;
+        }
+
+        .power-title {
+            color: #7c3aed;
+            margin: 0;
+            font-size: clamp(1.5rem, 2.7vw, 2.4rem);
+            font-style: italic;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .power-subtitle {
+            margin: 8px 0 0;
+            color: #000000;
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.3;
+        }
+
+        .power-bottom-text {
+            max-width: 820px;
+            margin: 56px auto 0;
+            padding: 0 24px;
+            text-align: center;
+            color: #000000;
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.55;
         }
 
         .about-layout {
@@ -536,9 +574,32 @@
                 padding: 0 18px;
             }
 
+            .power-titles {
+                margin-top: 16px;
+                padding: 0 18px;
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .power-bottom-text {
+                margin-top: 22px;
+                padding: 0 18px;
+            }
+
             .about-layout {
                 grid-template-columns: 1fr;
                 gap: 24px;
+            }
+
+            .hero-meta {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .hero-meta-center,
+            .hero-meta-right {
+                text-align: center;
             }
 
             .edu-header {
@@ -588,16 +649,38 @@
     </nav>
 
     <section class="hero">
-        <p class="hero-left">GROWTH MARKETING<br>PORTFOLIO</p>
-        <div class="hero-image-placeholder">
-            <img src="P.png" alt="Hero image">
+        <div class="hero-welcome">
+            <div>
+                <p class="hero-welcome-top">welcome to my</p>
+                <p class="hero-welcome-bottom">portfolio<span class="hero-welcome-year">2023</span></p>
+            </div>
+            <div class="hero-meta">
+                <p>DESIGN<br>PORTFOLIO<br><br>JUYEON YE<br>YEJUYEON01@GMAIL.COM</p>
+                <p class="hero-meta-center">( GRAPHIC DESIGNER )</p>
+                <p class="hero-meta-right">BEHANCE.NET<br>/JUYEONYE</p>
+            </div>
         </div>
-        <p class="hero-right">JASMINE RAMSTEN</p>
     </section>
 
     <section class="about-statement">
         <p>POWER GREAT BRANDS<br>WITH EVEN GREATER MARKETING</p>
     </section>
+
+    <section class="power-titles" aria-label="Three chapter titles">
+        <div>
+            <h3 class="power-title">TITLE TEXT</h3>
+            <p class="power-subtitle">Smaller text below</p>
+        </div>
+        <div>
+            <h3 class="power-title">TITLE TEXT</h3>
+            <p class="power-subtitle">Smaller text below</p>
+        </div>
+        <div>
+            <h3 class="power-title">TITLE TEXT</h3>
+            <p class="power-subtitle">Smaller text below</p>
+        </div>
+    </section>
+    <p class="power-bottom-text">This is sample bottom text. You can replace this sentence with your own copy later.</p>
 
     <section class="about-section" id="about-me">
         <div class="about-layout">
@@ -789,21 +872,6 @@
 
     <script>
         const headers = document.querySelectorAll('.edu-header');
-        const hero = document.querySelector('.hero');
-        const heroLeft = document.querySelector('.hero-left');
-        const heroRight = document.querySelector('.hero-right');
-        const heroPlaceholder = document.querySelector('.hero-image-placeholder');
-
-        function positionHeroPlaceholder() {
-            if (!hero || !heroLeft || !heroRight || !heroPlaceholder) return;
-            const heroRect = hero.getBoundingClientRect();
-            const leftRect = heroLeft.getBoundingClientRect();
-            const rightRect = heroRight.getBoundingClientRect();
-            const centerY = (leftRect.bottom + rightRect.top) / 2;
-            heroPlaceholder.style.top = `${centerY - heroRect.top}px`;
-        }
-
-        positionHeroPlaceholder();
 
         function toggleItem(header) {
             const item = header.parentElement;
@@ -826,7 +894,6 @@
         });
 
         window.addEventListener('resize', () => {
-            positionHeroPlaceholder();
             document.querySelectorAll('.edu-item.active .edu-content').forEach((content) => {
                 content.style.maxHeight = `${content.scrollHeight}px`;
             });
