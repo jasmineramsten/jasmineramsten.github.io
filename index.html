@@ -115,6 +115,29 @@
             margin-left: 8px;
         }
 
+        .hero-polaroid {
+            margin: 68px auto 24px;
+            width: clamp(210px, 21vw, 320px);
+            background: #ffffff;
+            border: 1px solid #d9d9d9;
+            padding: 14px 14px 26px;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-polaroid-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border: 2px solid #d1d5db;
+            background: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         .hero-meta {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -675,6 +698,12 @@
                 text-align: center;
             }
 
+            .hero-polaroid {
+                margin: 20px auto 14px;
+                width: min(68vw, 250px);
+                padding: 10px 10px 18px;
+            }
+
             .hero-meta-kicker,
             .hero-meta-left,
             .hero-meta-center,
@@ -735,6 +764,9 @@
             <div>
                 <p class="hero-welcome-top">GROWTH MARKETING</p>
                 <p class="hero-welcome-bottom">Portfolio<span class="hero-welcome-year">2026</span></p>
+            </div>
+            <div class="hero-polaroid" aria-label="Polaroid image placeholder">
+                <div class="hero-polaroid-image">Image placeholder</div>
             </div>
             <div class="hero-meta">
                 <p class="hero-meta-left">GROWTH MARKETING</p>
