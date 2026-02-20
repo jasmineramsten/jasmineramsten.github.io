@@ -162,7 +162,7 @@
             background-color: #e5e7eb;
             color: #000;
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: 0;
             font-weight: 700;
             transition: transform 0.2s ease, background-color 0.2s ease;
         }
@@ -422,31 +422,31 @@
         }
 
         .course-card {
-            display: block;
+            display: grid;
+            grid-template-rows: auto auto auto 1fr;
             text-decoration: none;
             color: inherit;
             background: transparent;
             border-radius: 0;
             padding: 0;
             min-height: 0;
-            transition: transform 0.22s ease, box-shadow 0.22s ease;
-        }
-
-        .course-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+            transition: none;
         }
 
         .course-label {
-            font-size: 1.02rem;
-            font-weight: 700;
-            margin: 0 0 4px;
+            font-size: 1.06rem;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: 0;
+            margin: 0 0 2px;
+            color: #4b5563;
+            min-height: 2.2em;
         }
 
         .course-image {
             width: 100%;
             height: 260px;
-            border-radius: 14px;
+            border-radius: 0;
             border: none;
             object-fit: cover;
             display: block;
@@ -461,9 +461,20 @@
         }
 
         .client-label {
-            margin: 0 0 18px;
-            font-size: 0.88rem;
-            color: var(--muted);
+            margin: 10px 0 0;
+            font-size: 1.95rem;
+            color: #111111;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            min-height: 2em;
+        }
+
+        .case-description {
+            margin: 0;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            color: #4b5563;
         }
 
         .site-footer {
@@ -789,34 +800,40 @@
         <h2 class="title">CASES</h2>
         <div class="portfolio-grid">
             <a class="course-card" href="projekt.html">
-                <p class="course-label">Performance Marketing</p>
-                <p class="client-label">Boco Atelier</p>
                 <img class="course-image" src="BA.png" alt="Projektbild 1">
+                <p class="client-label">Boco Atelier</p>
+                <p class="course-label">Performance Marketing</p>
+                <p class="case-description">Built and optimized performance campaigns with a growth-first mindset, improving session quality and turning paid traffic into measurable conversion lift.</p>
             </a>
             <a class="course-card" href="projekt.html">
-                <p class="course-label">SEO</p>
-                <p class="client-label">Akademibokhandeln</p>
                 <img class="course-image" src="AB.png" alt="Projektbild 2">
+                <p class="client-label">Akademibokhandeln</p>
+                <p class="course-label">SEO</p>
+                <p class="case-description">Strengthened search visibility through technical improvements and content structure, increasing discoverability and building stronger long-term organic reach.</p>
             </a>
             <a class="course-card" href="projekt.html">
-                <p class="course-label">CRO</p>
-                <p class="client-label">Under Your Skin</p>
                 <img class="course-image" src="UYS.png" alt="Projektbild 3">
+                <p class="client-label">Under Your Skin</p>
+                <p class="course-label">CRO</p>
+                <p class="case-description">Mapped user friction points and iterated key page elements with test-and-learn workflows to improve conversion rate and checkout performance.</p>
             </a>
             <a class="course-card" href="projekt.html">
-                <p class="course-label">Explore Sustainability</p>
-                <p class="client-label">Wasa</p>
                 <img class="course-image" src="ES.png" alt="Projektbild 4">
+                <p class="client-label">Wasa</p>
+                <p class="course-label">Explore Sustainability</p>
+                <p class="case-description">Developed an audience-centered concept balancing brand storytelling and sustainability messaging to drive engagement across digital channels.</p>
             </a>
             <a class="course-card" href="projekt.html">
-                <p class="course-label">CRM & CX</p>
-                <p class="client-label">Stadium</p>
                 <img class="course-image" src="S.png" alt="Projektbild 5">
+                <p class="client-label">Stadium</p>
+                <p class="course-label">CRM & CX</p>
+                <p class="case-description">Designed lifecycle communication and customer journey touchpoints that improved retention signals and created a clearer, more consistent brand experience.</p>
             </a>
             <a class="course-card" href="projekt.html">
-                <p class="course-label">X</p>
-                <p class="client-label">X</p>
                 <img class="course-image" src="ES" alt="Projektbild 6">
+                <p class="client-label">X</p>
+                <p class="course-label">X</p>
+                <p class="case-description">Placeholder text for your next case. Replace with a concise summary of objective, strategy, and measurable outcome.</p>
             </a>
         </div>
     </section>
