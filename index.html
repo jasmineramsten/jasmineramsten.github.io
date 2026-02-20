@@ -244,71 +244,97 @@
 
         .about-layout {
             display: grid;
-            grid-template-columns: 1fr 1.05fr;
-            gap: 56px;
-            align-items: center;
-            min-height: 620px;
+            grid-template-columns: minmax(320px, 520px) minmax(320px, 1fr);
+            gap: 38px;
+            align-items: start;
         }
 
-        .about-copy h2 {
-            margin: 0 0 18px;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            letter-spacing: 1px;
-        }
-
-        .about-copy p {
-            margin: 0;
-            font-size: 1.08rem;
-            line-height: 1.75;
-            color: var(--muted);
-            max-width: 42ch;
-        }
-
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .about-tags.secondary {
-            margin-top: 36px;
-            display: grid;
-            gap: 10px;
-        }
-
-        .about-tag {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 999px;
-            background: #e5e7eb;
-            color: #000;
-            padding: 8px 14px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .about-tags-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .about-header {
+            margin-bottom: 14px;
+            text-align: left;
+            margin-left: 0;
         }
 
         .about-visual {
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1px;
-            width: 100%;
-            justify-content: center;
+            gap: 16px;
         }
 
         .about-photo {
             width: 100%;
-            max-height: 1520px;
+            height: auto;
+            aspect-ratio: 3 / 4;
             object-fit: cover;
-            border-radius: 18px;
+            border-radius: 0;
+            display: block;
+        }
+
+        .about-copy {
+            max-width: 760px;
+        }
+
+        .about-name {
+            margin: 0;
+            font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
+            font-size: clamp(2rem, 4.2vw, 4.2rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-left: -120px;
+        }
+
+        .about-subtitle {
+            margin: 6px 0 0;
+            font-size: clamp(1.1rem, 1.8vw, 2rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .about-bio {
+            margin-top: 30px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .about-bio p {
+            margin: 0;
+            font-size: clamp(1rem, 1.35vw, 1.16rem);
+            line-height: 1.55;
+            color: #171717;
+        }
+
+        .about-bio p strong {
+            font-weight: 800;
+        }
+
+        .about-rep {
+            margin-top: 38px;
+            color: #6b7280;
+            text-transform: uppercase;
+            font-size: 0.96rem;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+
+        .about-rep-title {
+            margin: 0 0 8px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            font-size: 0.92rem;
+        }
+
+        .about-rep ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .about-rep li {
+            margin: 4px 0;
         }
 
         .education-section h2.title,
@@ -598,7 +624,7 @@
 
             .about-layout {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 22px;
             }
 
             .hero-meta {
@@ -693,9 +719,34 @@
     <p class="power-bottom-text">This is sample bottom text. You can replace this sentence with your own copy later.</p>
 
     <section class="about-section" id="about-me">
+        <div class="about-header">
+            <h2 class="about-name">About me</h2>
+            <p class="about-subtitle">Growth Marketing + Strategy</p>
+        </div>
         <div class="about-layout">
             <div class="about-visual">
+                <img class="about-photo" src="bild-jasmine.JPG" alt="Portrait of Jasmine Ramsten">
                 <a href="CV - Jasmine Ramsten.pdf" download class="cv-button">Download my CV</a>
+            </div>
+            <div class="about-copy">
+                <div class="about-bio">
+                    <p><strong>JASMINE RAMSTEN</strong> is a growth marketer focused on building brand momentum through data, storytelling, and performance-driven execution. Her approach combines creative direction with measurable strategy, resulting in campaigns that feel distinctive and deliver clear business impact.</p>
+                    <p>With experience across performance marketing, content, and digital optimization, Jasmine works across the full customer journey. She translates audience insights into channel strategy, sharpens messaging, and improves conversion through continuous testing and refinement.</p>
+                    <p>Her work spans campaign planning, paid social, web optimization, and brand communication. She is especially driven by projects where strong creative concepts meet structured growth frameworks to create long-term brand equity.</p>
+                    <p>Jasmine continues to develop bold, modern marketing work that connects brand identity with audience behavior and sustainable growth.</p>
+                </div>
+
+                <div class="about-rep">
+                    <p class="about-rep-title">Programs I use</p>
+                    <ul>
+                        <li>GA4</li>
+                        <li>GTM</li>
+                        <li>Shopify</li>
+                        <li>Looker Studio</li>
+                        <li>Lucky Orange</li>
+                        <li>Meta Ads Manager</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
