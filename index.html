@@ -234,8 +234,8 @@
 
         .power-bottom-text {
             max-width: 820px;
-            margin: 56px auto 0;
-            padding: 0 24px;
+            margin: 92px auto 0;
+            padding: 0 24px 165px;
             text-align: center;
             color: #000000;
             font-size: clamp(1rem, 1.5vw, 1.25rem);
@@ -244,97 +244,67 @@
 
         .about-layout {
             display: grid;
-            grid-template-columns: minmax(320px, 520px) minmax(320px, 1fr);
-            gap: 38px;
+            grid-template-columns: minmax(340px, 1.15fr) minmax(280px, 0.85fr);
+            gap: 36px;
             align-items: start;
-        }
-
-        .about-header {
-            margin-bottom: 14px;
-            text-align: left;
-            margin-left: 0;
-        }
-
-        .about-visual {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .about-photo {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
-            border-radius: 0;
-            display: block;
         }
 
         .about-copy {
             max-width: 760px;
         }
 
-        .about-name {
+        .about-title {
             margin: 0;
-            font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
-            font-size: clamp(2rem, 4.2vw, 4.2rem);
-            line-height: 0.95;
+            font-size: clamp(2rem, 4.8vw, 4.8rem);
+            line-height: 0.97;
+            letter-spacing: -0.03em;
+            font-weight: 500;
+        }
+
+        .about-body {
+            margin: 44px 0 0;
+            font-size: clamp(0.94rem, 1.25vw, 1.08rem);
+            line-height: 1.62;
+            color: #111;
+            max-width: 62ch;
+        }
+
+        .about-media {
+            position: relative;
+            width: 100%;
+            min-height: 560px;
+        }
+
+        .about-media-main {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: min(78%, 340px);
+            aspect-ratio: 3 / 4;
+            border: 2px solid #d1d5db;
+            background: #f7f7f7;
+        }
+
+        .about-media-secondary {
+            position: absolute;
+            left: 16%;
+            top: 62%;
+            width: min(42%, 190px);
+            aspect-ratio: 1 / 1;
+            border: 2px solid #d1d5db;
+            background: #f7f7f7;
+        }
+
+        .media-placeholder-label {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            letter-spacing: -0.02em;
-            margin-left: -120px;
-        }
-
-        .about-subtitle {
-            margin: 6px 0 0;
-            font-size: clamp(1.1rem, 1.8vw, 2rem);
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        .about-bio {
-            margin-top: 30px;
-            display: grid;
-            gap: 18px;
-        }
-
-        .about-bio p {
-            margin: 0;
-            font-size: clamp(1rem, 1.35vw, 1.16rem);
-            line-height: 1.55;
-            color: #171717;
-        }
-
-        .about-bio p strong {
-            font-weight: 800;
-        }
-
-        .about-rep {
-            margin-top: 38px;
-            color: #6b7280;
-            text-transform: uppercase;
-            font-size: 0.96rem;
-            letter-spacing: 0.02em;
-            line-height: 1.5;
-        }
-
-        .about-rep-title {
-            margin: 0 0 8px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            font-size: 0.92rem;
-        }
-
-        .about-rep ul {
-            margin: 0;
-            padding-left: 18px;
-        }
-
-        .about-rep li {
-            margin: 4px 0;
+            color: #9ca3af;
         }
 
         .education-section h2.title,
@@ -629,13 +599,27 @@
             }
 
             .power-bottom-text {
-                margin-top: 22px;
-                padding: 0 18px;
+                margin-top: 34px;
+                padding: 0 18px 90px;
             }
 
             .about-layout {
                 grid-template-columns: 1fr;
-                gap: 22px;
+                gap: 24px;
+            }
+
+            .about-media {
+                min-height: 420px;
+            }
+
+            .about-media-main {
+                width: min(82%, 320px);
+            }
+
+            .about-media-secondary {
+                left: 8%;
+                top: 60%;
+                width: min(44%, 170px);
             }
 
             .hero-meta {
@@ -730,33 +714,17 @@
     <p class="power-bottom-text">This is sample bottom text. You can replace this sentence with your own copy later.</p>
 
     <section class="about-section" id="about-me">
-        <div class="about-header">
-            <h2 class="about-name">About me</h2>
-            <p class="about-subtitle">Growth Marketing + Strategy</p>
-        </div>
         <div class="about-layout">
-            <div class="about-visual">
-                <img class="about-photo" src="bild-jasmine.JPG" alt="Portrait of Jasmine Ramsten">
-                <a href="CV - Jasmine Ramsten.pdf" download class="cv-button">Download my CV</a>
-            </div>
             <div class="about-copy">
-                <div class="about-bio">
-                    <p><strong>JASMINE RAMSTEN</strong> is a growth marketer focused on building brand momentum through data, storytelling, and performance-driven execution. Her approach combines creative direction with measurable strategy, resulting in campaigns that feel distinctive and deliver clear business impact.</p>
-                    <p>With experience across performance marketing, content, and digital optimization, Jasmine works across the full customer journey. She translates audience insights into channel strategy, sharpens messaging, and improves conversion through continuous testing and refinement.</p>
-                    <p>Her work spans campaign planning, paid social, web optimization, and brand communication. She is especially driven by projects where strong creative concepts meet structured growth frameworks to create long-term brand equity.</p>
-                    <p>Jasmine continues to develop bold, modern marketing work that connects brand identity with audience behavior and sustainable growth.</p>
+                <h2 class="about-title">Jasmine Ramsten Stockholm, SWE</h2>
+                <p class="about-body">I am a growth marketer and creative strategist focused on building strong brand positions through audience insight, clear storytelling, and measurable digital performance. My work sits in the intersection between brand and business, where creative direction, channel strategy, and optimization come together to move both engagement and conversion. I enjoy translating complex data into clear actions, shaping campaigns that feel culturally relevant, and developing communication that creates both short-term results and long-term brand equity. I am especially driven by projects where experimentation, structure, and creative ambition are equally important.</p>
+            </div>
+            <div class="about-media" aria-label="Image placeholders">
+                <div class="about-media-main">
+                    <span class="media-placeholder-label">Image Placeholder</span>
                 </div>
-
-                <div class="about-rep">
-                    <p class="about-rep-title">Programs I use</p>
-                    <ul>
-                        <li>GA4</li>
-                        <li>GTM</li>
-                        <li>Shopify</li>
-                        <li>Looker Studio</li>
-                        <li>Lucky Orange</li>
-                        <li>Meta Ads Manager</li>
-                    </ul>
+                <div class="about-media-secondary">
+                    <span class="media-placeholder-label">Image Placeholder</span>
                 </div>
             </div>
         </div>
