@@ -130,12 +130,29 @@
             line-height: 1.2;
         }
 
+        .hero-meta-kicker {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: center;
+            font-size: clamp(0.72rem, 1vw, 0.92rem);
+            letter-spacing: 0.12em;
+        }
+
+        .hero-meta-left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
         .hero-meta-center {
+            grid-column: 2;
+            grid-row: 2;
             text-align: center;
             font-size: clamp(0.93rem, 1.425vw, 1.32rem);
         }
 
         .hero-meta-right {
+            grid-column: 3;
+            grid-row: 2;
             text-align: right;
         }
 
@@ -251,6 +268,16 @@
 
         .about-copy {
             max-width: 760px;
+            margin-top: 42px;
+        }
+
+        .about-section-label {
+            margin: -34px 0 34px;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            line-height: 1.1;
         }
 
         .about-title {
@@ -305,6 +332,26 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: #9ca3af;
+        }
+
+        .between-placeholder {
+            max-width: 1200px;
+            margin: 64px auto 86px;
+            padding: 0 24px;
+        }
+
+        .between-placeholder-box {
+            width: 100%;
+            height: clamp(140px, 20vw, 230px);
+            border: 2px solid #d1d5db;
+            background: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .education-section h2.title,
@@ -628,8 +675,12 @@
                 text-align: center;
             }
 
+            .hero-meta-kicker,
+            .hero-meta-left,
             .hero-meta-center,
             .hero-meta-right {
+                grid-column: auto;
+                grid-row: auto;
                 text-align: center;
             }
 
@@ -673,7 +724,7 @@
         <div class="top-banner-inner">
             <a href="#about-me">ABOUT ME</a>
             <a href="#education">EDUCATION</a>
-            <a href="#cases">CASES</a>
+            <a href="#project-cases">CASES</a>
             <a href="#internships">INTERNSHIPS</a>
             <a href="#contact">CONTACT</a>
         </div>
@@ -686,7 +737,7 @@
                 <p class="hero-welcome-bottom">Portfolio<span class="hero-welcome-year">2026</span></p>
             </div>
             <div class="hero-meta">
-                <p>GROWTH MARKETING</p>
+                <p class="hero-meta-left">GROWTH MARKETING</p>
                 <p class="hero-meta-center">JASMINE RAMSTEN</p>
                 <p class="hero-meta-right"><a href="mailto:jasmineramsten@live.se">JASMINERAMSTEN@LIVE.SE</a></p>
             </div>
@@ -716,6 +767,7 @@
     <section class="about-section" id="about-me">
         <div class="about-layout">
             <div class="about-copy">
+                <p class="about-section-label">ABOUT ME</p>
                 <h2 class="about-title">Jasmine Ramsten Stockholm, SWE</h2>
                 <p class="about-body">I am a growth marketer and creative strategist focused on building strong brand positions through audience insight, clear storytelling, and measurable digital performance. My work sits in the intersection between brand and business, where creative direction, channel strategy, and optimization come together to move both engagement and conversion. I enjoy translating complex data into clear actions, shaping campaigns that feel culturally relevant, and developing communication that creates both short-term results and long-term brand equity. I am especially driven by projects where experimentation, structure, and creative ambition are equally important.</p>
             </div>
@@ -728,6 +780,10 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="between-placeholder" aria-label="Wide image placeholder">
+        <div class="between-placeholder-box">Image placeholder</div>
     </section>
 
     <section class="education-section" id="education">
