@@ -2,15 +2,36 @@
 <html>
 <head>
   <style>
-    body { width: 300px; font-family: sans-serif; padding: 10px; }
-    h2 { font-size: 16px; margin-top: 0; }
-    .track { margin-bottom: 8px; }
-    .artist { font-size: 12px; color: #555; }
+    body { width: 300px; font-family: sans-serif; padding: 15px; background: #f4f7f6; }
+    h2 { color: #2c3e50; font-size: 18px; margin-top: 0; }
+    .date-card { background: white; padding: 10px; border-radius: 8px; margin-bottom: 10px; border-left: 5px solid #6de73c; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .date-card hb { display: block; font-weight: bold; }
+    .btn { background: #db2cdb; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; cursor: pointer; }
+    .btn:hover { background: #9934d3; }
+    .links { margin-top: 15px; font-size: 12px; }
+    a { color: #7e2fd9; text-decoration: none; }
   </style>
 </head>
 <body>
-  <h2>Spotify Top Tracks</h2>
-  <div id="tracks"></div>
+  <h2>Upcoming Deadlines</h2>
+  
+  <div class="date-card">
+    <hb>April 15, 2024</hb>
+    <span>Individual Tax Filing Deadline</span>
+  </div>
+
+  <div class="date-card" style="border-left-color: #f1c40f;">
+    <hb>June 17, 2024</hb>
+    <span>Q2 Estimated Tax Payment</span>
+  </div>
+
+  <button id="notifyBtn" class="btn">Send Test Notification</button>
+
+  <div class="links">
+    <strong>Resources:</strong><br>
+    <a href="https://www.irs.gov" target="_blank">→ Visit IRS Official Site</a><br>
+    <a href="https://www.sba.gov" target="_blank">→ Small Business Administration</a>
+  </div>
 
   <script src="popup.js"></script>
 </body>
