@@ -352,13 +352,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             height: clamp(140px, 20vw, 230px);
             border: 2px solid #d1d5db;
             background: #f7f7f7;
+            color: #111;
+            font-size: clamp(0.78rem, 1.05vw, 1rem);
+            letter-spacing: 0.01em;
+            text-transform: none;
+            line-height: 1.5;
+            text-align: center;
+            padding: 14px 22px;
+            display: grid;
+            gap: 14px;
+            align-content: center;
+        }
+
+        .skills-line-top {
+            margin: 0;
+        }
+
+        .skills-line-logos {
             display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
             align-items: center;
             justify-content: center;
-            color: #9ca3af;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
+        }
+
+        .logo-item {
+            display: grid;
+            justify-items: center;
+            gap: 6px;
+            min-width: 66px;
+        }
+
+        .skills-line-logos img {
+            width: 22px;
+            height: 22px;
+            display: block;
+            filter: grayscale(100%) brightness(0);
+        }
+
+        .logo-name {
+            margin: 0;
+            font-size: 0.62rem;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+            color: #111;
             text-transform: uppercase;
+            line-height: 1.2;
+            text-align: center;
         }
 
         .education-section h2.title,
@@ -441,64 +481,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            column-gap: 28px;
-            row-gap: 56px;
+            gap: 46px 24px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .course-card {
-            display: grid;
-            grid-template-rows: auto auto auto 1fr;
+            display: block;
             text-decoration: none;
             color: inherit;
-            background: transparent;
-            border-radius: 0;
-            padding: 0;
-            min-height: 0;
-            transition: none;
-        }
-
-        .course-label {
-            font-size: 1.06rem;
-            font-weight: 500;
-            line-height: 1.2;
-            letter-spacing: 0;
-            margin: 0 0 2px;
-            color: #4b5563;
-            min-height: 2.2em;
         }
 
         .course-image {
             width: 100%;
-            height: 260px;
+            aspect-ratio: 4 / 3.9;
             border-radius: 0;
             border: none;
             object-fit: cover;
             display: block;
             background: transparent;
-            padding: 0;
-            filter: grayscale(100%);
-            transition: filter 0.25s ease;
-        }
-
-        .course-card:hover .course-image {
-            filter: grayscale(0%);
+            margin-bottom: 18px;
         }
 
         .client-label {
-            margin: 10px 0 0;
-            font-size: 1.95rem;
+            margin: 0 0 8px;
+            font-size: clamp(2rem, 2.5vw, 2.35rem);
             color: #111111;
-            font-weight: 700;
-            line-height: 1.05;
+            font-weight: 500;
+            line-height: 1.04;
             letter-spacing: -0.02em;
-            min-height: 2em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .course-label {
+            margin: 0 0 10px;
+            color: #606060;
+            font-size: 0.98rem;
+            line-height: 1.4;
+            min-height: 0;
+            font-weight: 400;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .case-description {
-            margin: 0;
+            margin: 0 0 12px;
             font-size: 0.98rem;
-            line-height: 1.5;
-            color: #4b5563;
+            line-height: 1.45;
+            color: #4b4b4b;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .portfolio-section {
+            max-width: 1360px;
         }
 
         .site-footer {
@@ -642,13 +675,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 gap: 18px;
             }
 
-            .course-card {
-                min-height: 300px;
-                padding: 16px;
-            }
-
             .course-image {
-                height: 190px;
+                margin-bottom: 14px;
             }
 
             .site-footer {
@@ -731,7 +759,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <section class="between-placeholder" aria-label="Wide image placeholder">
-        <div class="between-placeholder-box">Image placeholder</div>
+        <div class="between-placeholder-box">
+            <p class="skills-line-top">Search Engine Optimization - Performance Marketing - Search Engine Marketing (Google &amp; LLM) - Conversion Rate Optimization - Customer Relationship Management</p>
+            <div class="skills-line-logos" aria-label="Tools logos">
+                <div class="logo-item">
+                    <img src="https://cdn.simpleicons.org/googleanalytics/000000" alt="GA4">
+                    <p class="logo-name">GA4</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.simpleicons.org/googletagmanager/000000" alt="GTM">
+                    <p class="logo-name">GTM</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.simpleicons.org/shopify/000000" alt="Shopify">
+                    <p class="logo-name">Shopify</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.simpleicons.org/looker/000000" alt="Looker Studio">
+                    <p class="logo-name">Looker Studio</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok Business Ads">
+                    <p class="logo-name">TikTok Ads</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="Visual Studio Code">
+                    <p class="logo-name">VS Code</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.luckyorange.com/favicon.ico" alt="Lucky Orange">
+                    <p class="logo-name">Lucky<br>Orange</p>
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.simpleicons.org/meta/000000" alt="Meta Ads Manager">
+                    <p class="logo-name">Meta Ads</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="education-section" id="education">
@@ -773,39 +837,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-grid">
             <a class="course-card" href="projekt.html">
                 <img class="course-image" src="BA.png" alt="Projektbild 1">
-                <p class="client-label">Boco Atelier</p>
-                <p class="course-label">Performance Marketing</p>
-                <p class="case-description">Built and optimized performance campaigns with a growth-first mindset, improving session quality and turning paid traffic into measurable conversion lift.</p>
+                <p class="client-label">The Story of Boco Atelier</p>
+                <p class="course-label">Performance Marketing Case</p>
+                <p class="case-description">A focused growth journey where paid social, creative testing, and landing-page optimization were combined to scale qualified traffic and conversion impact.</p>
             </a>
             <a class="course-card" href="projekt.html">
                 <img class="course-image" src="AB.png" alt="Projektbild 2">
-                <p class="client-label">Akademibokhandeln</p>
-                <p class="course-label">SEO</p>
-                <p class="case-description">Strengthened search visibility through technical improvements and content structure, increasing discoverability and building stronger long-term organic reach.</p>
+                <p class="client-label">Search Growth at Akademibokhandeln</p>
+                <p class="course-label">SEO + SEM</p>
+                <p class="case-description">A search-first framework built around intent mapping, technical structure, and content refinement to expand discoverability and strengthen long-term visibility.</p>
             </a>
             <a class="course-card" href="projekt.html">
                 <img class="course-image" src="UYS.png" alt="Projektbild 3">
-                <p class="client-label">Under Your Skin</p>
-                <p class="course-label">CRO</p>
-                <p class="case-description">Mapped user friction points and iterated key page elements with test-and-learn workflows to improve conversion rate and checkout performance.</p>
+                <p class="client-label">Conversion Work for Under Your Skin</p>
+                <p class="course-label">CRO + Customer Journey</p>
+                <p class="case-description">A data-informed optimization process focused on reducing friction in high-intent moments, improving clarity in messaging, and increasing conversion consistency.</p>
             </a>
             <a class="course-card" href="projekt.html">
                 <img class="course-image" src="ES.png" alt="Projektbild 4">
-                <p class="client-label">Wasa</p>
-                <p class="course-label">Explore Sustainability</p>
-                <p class="case-description">Developed an audience-centered concept balancing brand storytelling and sustainability messaging to drive engagement across digital channels.</p>
+                <p class="client-label">Wasa Sustainability Platform</p>
+                <p class="course-label">Brand + Content Strategy</p>
+                <p class="case-description">Built a content direction around sustainability storytelling to increase message clarity, cultural relevance, and audience resonance across campaign touchpoints.</p>
             </a>
             <a class="course-card" href="projekt.html">
                 <img class="course-image" src="S.png" alt="Projektbild 5">
-                <p class="client-label">Stadium</p>
-                <p class="course-label">CRM & CX</p>
-                <p class="case-description">Designed lifecycle communication and customer journey touchpoints that improved retention signals and created a clearer, more consistent brand experience.</p>
+                <p class="client-label">Stadium CRM & CX</p>
+                <p class="course-label">Retention + Lifecycle</p>
+                <p class="case-description">Designed lifecycle communication and customer journey flows to improve retention signals, strengthen loyalty behavior, and create a more consistent brand experience.</p>
             </a>
             <a class="course-card" href="projekt.html">
-                <img class="course-image" src="ES" alt="Projektbild 6">
-                <p class="client-label">X</p>
-                <p class="course-label">X</p>
-                <p class="case-description">Placeholder text for your next case. Replace with a concise summary of objective, strategy, and measurable outcome.</p>
+                <img class="course-image" src="AB.png" alt="Projektbild 6">
+                <p class="client-label">Growth Experiment Program</p>
+                <p class="course-label">Testing + Optimization</p>
+                <p class="case-description">Created a structured test-and-learn setup for creative, landing pages, and channel mix to speed up learning cycles and improve full-funnel performance outcomes.</p>
             </a>
         </div>
     </section>
