@@ -503,127 +503,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .site-footer {
             max-width: 1320px;
-            margin: 96px auto 0;
-            background: #f2f2f2;
-            border: 1px solid #dedede;
-            border-radius: 16px 16px 0 0;
-            padding: 0;
+            margin: 110px auto 0;
+            background: #f6f6f6;
+            border: 1px solid #e1e1e1;
+            padding: clamp(28px, 3.5vw, 52px);
         }
 
         .footer-inner {
             display: grid;
-            gap: 0;
+            gap: 30px;
         }
 
-        .footer-nav {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px 20px;
-            padding: 18px 20px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .footer-nav span,
-        .footer-nav a {
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
+        .contact-hero-title {
+            margin: 14px 0 18px;
+            font-size: clamp(2.2rem, 5.8vw, 4.8rem);
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            font-weight: 800;
             color: #000;
-            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .footer-main {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            padding: 26px 20px 28px;
-            align-items: flex-start;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: clamp(30px, 4vw, 72px);
+            align-items: center;
         }
 
-        .footer-left h3 {
-            margin: 0 0 44px;
-            font-size: clamp(2rem, 5.8vw, 4rem);
-            line-height: 1;
-            letter-spacing: -0.6px;
-            font-weight: 800;
+        .footer-left {
+            justify-self: start;
         }
 
-        .contact-item {
-            margin-bottom: 16px;
+        .footer-right {
+            justify-self: end;
+            margin-left: auto;
+            width: min(520px, 100%);
         }
 
-        .contact-label {
-            margin: 0 0 4px;
+        .connect-row {
+            margin: 0 0 16px;
+        }
+
+        .connect-label {
+            margin: 0;
             font-size: 0.72rem;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #000;
+            color: #555;
             font-weight: 700;
         }
 
-        .contact-value {
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.45;
+        .connect-value {
+            margin: 2px 0 0;
+            font-size: 0.95rem;
             color: #000;
+            line-height: 1.4;
         }
 
-        .contact-value a {
+        .connect-value a {
             color: inherit;
             text-decoration: none;
         }
 
-        .footer-right-title {
-            margin: 0 0 10px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-        }
-
-        .footer-links {
-            display: grid;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .footer-links a {
-            text-decoration: none;
-            color: #000;
-            font-size: 1.05rem;
-        }
-
-        .footer-note {
-            margin: 0;
-            padding-top: 14px;
-            border-top: 1px solid #ddd;
-            font-size: 0.96rem;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 52ch;
-        }
-
-        .social-links {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 6px;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            width: 36px;
-            height: 36px;
-        }
-
-        .social-link svg {
-            width: 100%;
-            height: 100%;
-            fill: #000;
-        }
 
         @media (max-width: 1024px) {
             .portfolio-grid {
@@ -713,16 +655,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 margin: 64px 18px 0;
             }
 
-            .footer-nav,
-            .footer-main {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
             .footer-main {
                 grid-template-columns: 1fr;
                 gap: 22px;
             }
+
         }
     </style>
 </head>
@@ -957,27 +894,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer class="site-footer" id="contact">
         <div class="footer-inner">
-            <div class="footer-nav">
-                <span>JASMINE RAMSTEN</span>
-            </div>
             <div class="footer-main">
                 <div class="footer-left">
-                    <h3>LET'S CONNECT</h3>
-                    <div class="contact-item">
-                        <p class="contact-label">Email</p>
-                        <p class="contact-value"><a href="mailto:jasmineramsten@live.se">jasmineramsten@live.se</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <p class="contact-label">Phone</p>
-                        <p class="contact-value"><a href="tel:+46708785656">+46 70 878 56 56</a></p>
-                    </div>
+                    <h3 class="contact-hero-title">Contact me</h3>
                 </div>
                 <div class="footer-right">
-                    <div class="footer-links">
-                        <a href="https://www.linkedin.com/in/jasmine-ramsten" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://www.instagram.com/jasmineramsten/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <div class="connect-row">
+                        <p class="connect-label">Email</p>
+                        <p class="connect-value"><a href="mailto:jasmineramsten@live.se">jasmineramsten@live.se</a></p>
                     </div>
-                    <p class="footer-note"> Här ska det stå något smart! Typ I build growth strategies grounded in audience insight, strong storytelling, and data-driven optimization to create measurable impact</p>
+                    <div class="connect-row">
+                        <p class="connect-label">Phone</p>
+                        <p class="connect-value"><a href="tel:+46708785656">+46 70 878 56 56</a></p>
+                    </div>
+                    <div class="connect-row">
+                        <p class="connect-label">LinkedIn</p>
+                        <p class="connect-value"><a href="https://www.linkedin.com/in/jasmine-ramsten" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/jasmine-ramsten</a></p>
+                    </div>
+                    <div class="connect-row">
+                        <p class="connect-label">Instagram</p>
+                        <p class="connect-value"><a href="https://www.instagram.com/jasmineramsten/" target="_blank" rel="noopener noreferrer">instagram.com/jasmineramsten</a></p>
+                    </div>
                 </div>
             </div>
         </div>
