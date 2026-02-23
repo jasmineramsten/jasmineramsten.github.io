@@ -68,6 +68,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: scale(1.08);
         }
 
+        .top-banner .nav-cv-button {
+            padding: 8px 12px;
+            border: 1.5px solid #111;
+            border-radius: 0;
+            background: #f3f4f6;
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .top-banner .nav-cv-button:hover {
+            transform: none;
+            background: #e5e7eb;
+        }
+
         #about-me,
         #education,
         #project-cases,
@@ -154,6 +171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             grid-row: 2;
             text-align: center;
             font-size: clamp(0.93rem, 1.425vw, 1.32rem);
+            transform: translateY(-8px);
         }
 
         .hero-meta-right {
@@ -666,6 +684,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 text-align: center;
             }
 
+            .hero-meta-center {
+                transform: translateY(0);
+            }
+
             .edu-header {
                 align-items: flex-start;
             }
@@ -703,6 +725,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="#project-cases">CASES</a>
             <a href="#internships">INTERNSHIPS</a>
             <a href="#contact">CONTACT</a>
+            <a class="nav-cv-button" href="CV - Jasmine Ramsten.pdf" download>Download my CV</a>
         </div>
     </nav>
 
