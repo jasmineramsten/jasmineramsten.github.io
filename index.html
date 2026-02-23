@@ -549,9 +549,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .portfolio-section {
-            max-width: 1360px;
+            max-width: 1200px;
         }
 
+        .cases-carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .cases-viewport {
+            overflow: hidden;
+        }
+
+        .cases-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.42s ease;
+            will-change: transform;
+        }
+
+        .cases-slide {
+            flex: 0 0 calc((100% - 40px) / 3);
+            min-width: 0;
+        }
+
+        .case-card {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #9d9d9d;
+            text-decoration: none;
+            color: #111;
+            position: relative;
+            transition: transform 0.35s ease;
+        }
+
+        .cases-slide.is-center .case-card {
+            transform: scale(1.06);
+            background: #8b8b8b;
+        }
+
+        .case-card-label {
+            position: absolute;
+            left: 14px;
+            bottom: 12px;
+            margin: 0;
+            font-size: 0.95rem;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border: 1px solid #cdcdcd;
+            background: #fff;
+            color: #111;
+            font-size: 1.35rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .carousel-btn.prev { left: -54px; }
+        .carousel-btn.next { right: -54px; }
+
+        .carousel-dots {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            border: none;
+            background: #cfcfcf;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            width: 22px;
+            background: #6f6f6f;
+        }
         .site-footer {
             max-width: 1320px;
             margin: 110px auto 0;
@@ -711,6 +802,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
 
         }
+        @media (max-width: 1024px) {
+            .cases-slide {
+                flex: 0 0 calc((100% - 20px) / 2);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cases-carousel {
+                padding: 0;
+            }
+
+            .cases-slide {
+                flex: 0 0 100%;
+            }
+
+            .carousel-btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -855,43 +965,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="portfolio-section" id="project-cases">
         <h2 class="title">CASES</h2>
-        <div class="portfolio-grid">
-            <div class="course-card">
-                <img class="course-image" src="BA.png" alt="Projektbild 1">
-                <p class="client-label">Boco Atelier</p>
-                <p class="course-label">Performance Marketing + visual identity</p>
-                <p class="case-description">A focused growth journey where paid social, creative testing, and landing-page optimization were combined to scale qualified traffic and conversion impact.</p>
+        <div class="cases-carousel" data-cases-carousel>
+            <button class="carousel-btn prev" type="button" aria-label="Previous case">&#8249;</button>
+            <div class="cases-viewport">
+                <div class="cases-track">
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 1"><p class="case-card-label">Case 1</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 2"><p class="case-card-label">Case 2</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 3"><p class="case-card-label">Case 3</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 4"><p class="case-card-label">Case 4</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 5"><p class="case-card-label">Case 5</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 6"><p class="case-card-label">Case 6</p></a></div>
+                </div>
             </div>
-            <div class="course-card">
-                <img class="course-image" src="S.png" alt="Projektbild 2">
-                <p class="client-label">Akademibokhandeln</p>
-                <p class="course-label">SEO + SEM</p>
-                <p class="case-description">A search-first framework built around intent mapping, technical structure, and content refinement to expand discoverability and strengthen long-term visibility.</p>
-            </div>
-            <div class="course-card">
-                <img class="course-image" src="UYS.png" alt="Projektbild 3">
-                <p class="client-label">Examensarbete</p>
-                <p class="course-label">To be continued</p>
-                <p class="case-description">A data-informed optimization process focused on reducing friction in high-intent moments, improving clarity in messaging, and increasing conversion consistency.</p>
-            </div>
-            <div class="course-card">
-                <img class="course-image" src="ES.png" alt="Projektbild 4">
-                <p class="client-label">Wasa</p>
-                <p class="course-label">x</p>
-                <p class="case-description">Built a content direction around sustainability storytelling to increase message clarity, cultural relevance, and audience resonance across campaign touchpoints.</p>
-            </div>
-            <div class="course-card">
-                <img class="course-image" src="S.png" alt="Projektbild 5">
-                <p class="client-label">Stadium</p>
-                <p class="course-label">CX + CRM</p>
-                <p class="case-description">Designed lifecycle communication and customer journey flows to improve retention signals, strengthen loyalty behavior, and create a more consistent brand experience.</p>
-            </div>
-            <div class="course-card">
-                <img class="course-image" src="S.png" alt="Projektbild 6">
-                <p class="client-label">Under Your Skin</p>
-                <p class="course-label">CRO + Customer Journey/p>
-                <p class="case-description">Created a structured test-and-learn setup for creative, landing pages, and channel mix to speed up learning cycles and improve full-funnel performance outcomes.</p>
-            </div>
+            <button class="carousel-btn next" type="button" aria-label="Next case">&#8250;</button>
+            <div class="carousel-dots" data-cases-dots></div>
         </div>
     </section>
 
@@ -1027,6 +1114,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             });
         });
+
+        const casesCarousel = document.querySelector('[data-cases-carousel]');
+
+        if (casesCarousel) {
+            const track = casesCarousel.querySelector('.cases-track');
+            const prevBtn = casesCarousel.querySelector('.carousel-btn.prev');
+            const nextBtn = casesCarousel.querySelector('.carousel-btn.next');
+            const dotsWrap = casesCarousel.querySelector('[data-cases-dots]');
+            const originalSlides = Array.from(track.querySelectorAll('.cases-slide'));
+            const count = originalSlides.length;
+            let allSlides = [];
+            let visible = 3;
+            let cloneCount = 3;
+            let current = 0;
+            let step = 0;
+
+            const getVisibleCount = () => {
+                if (window.innerWidth <= 640) return 1;
+                if (window.innerWidth <= 1024) return 2;
+                return 3;
+            };
+
+            const recalcStep = () => {
+                if (!allSlides.length) return;
+                const rect = allSlides[0].getBoundingClientRect();
+                const gap = parseFloat(getComputedStyle(track).gap || '0');
+                step = rect.width + gap;
+            };
+
+            const setPosition = (animate = true) => {
+                track.style.transition = animate ? 'transform 0.42s ease' : 'none';
+                track.style.transform = `translateX(${-current * step}px)`;
+            };
+
+            const getLogicalIndex = () => {
+                if (!count) return 0;
+                const raw = (current - cloneCount) % count;
+                return (raw + count) % count;
+            };
+
+            const refreshCenter = () => {
+                allSlides.forEach((slide) => slide.classList.remove('is-center'));
+                if (visible < 3) return;
+                const center = current + 1;
+                if (allSlides[center]) allSlides[center].classList.add('is-center');
+            };
+
+            const refreshDots = () => {
+                if (!dotsWrap) return;
+                dotsWrap.innerHTML = '';
+                const active = getLogicalIndex();
+                for (let i = 0; i < count; i += 1) {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'carousel-dot';
+                    if (i === active) dot.classList.add('active');
+                    dot.setAttribute('aria-label', `Go to case ${i + 1}`);
+                    dot.addEventListener('click', () => {
+                        current = cloneCount + i;
+                        setPosition(true);
+                        refreshCenter();
+                        refreshDots();
+                    });
+                    dotsWrap.appendChild(dot);
+                }
+            };
+
+            const rebuild = () => {
+                track.querySelectorAll('.cases-slide.is-clone').forEach((node) => node.remove());
+                visible = getVisibleCount();
+                cloneCount = Math.min(visible, count);
+
+                const head = originalSlides.slice(-cloneCount).map((slide) => {
+                    const clone = slide.cloneNode(true);
+                    clone.classList.add('is-clone');
+                    return clone;
+                });
+
+                const tail = originalSlides.slice(0, cloneCount).map((slide) => {
+                    const clone = slide.cloneNode(true);
+                    clone.classList.add('is-clone');
+                    return clone;
+                });
+
+                head.forEach((clone) => track.insertBefore(clone, track.firstChild));
+                tail.forEach((clone) => track.appendChild(clone));
+
+                allSlides = Array.from(track.querySelectorAll('.cases-slide'));
+                current = cloneCount;
+                recalcStep();
+                setPosition(false);
+                refreshCenter();
+                refreshDots();
+            };
+
+            nextBtn?.addEventListener('click', () => {
+                current += 1;
+                setPosition(true);
+            });
+
+            prevBtn?.addEventListener('click', () => {
+                current -= 1;
+                setPosition(true);
+            });
+
+            track.addEventListener('transitionend', () => {
+                if (current >= count + cloneCount) {
+                    current -= count;
+                    setPosition(false);
+                } else if (current < cloneCount) {
+                    current += count;
+                    setPosition(false);
+                }
+                refreshCenter();
+                refreshDots();
+            });
+
+            window.addEventListener('resize', () => {
+                rebuild();
+            });
+
+            rebuild();
+        }
 
         window.addEventListener('resize', () => {
             document.querySelectorAll('.edu-item.active .edu-content').forEach((content) => {
