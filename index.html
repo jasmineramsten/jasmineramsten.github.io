@@ -408,10 +408,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             filter: grayscale(100%) brightness(0);
         }
 
-        .skills-line-logos img.lucky-orange-logo {
-            filter: grayscale(100%) brightness(0);
-        }
-
         .logo-name {
             margin: 0;
             font-size: 0.62rem;
@@ -500,62 +496,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: rotate(45deg);
         }
 
-        .portfolio-section {
-            max-width: 1520px;
-        }
-
-        .case-grid {
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 28px;
-        }
-
-        .case-slide {
-            min-width: 0;
+            gap: 46px 24px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .course-card {
             display: block;
             text-decoration: none;
             color: inherit;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .course-image {
             width: 100%;
             aspect-ratio: 4 / 3.9;
-            border-radius: 10px;
+            border-radius: 0;
             border: none;
             object-fit: cover;
             display: block;
             background: transparent;
-            margin-bottom: 14px;
+            margin-bottom: 18px;
         }
 
         .client-label {
             margin: 0 0 8px;
-            font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+            font-size: clamp(1rem, 1.25vw, 1.175rem);
             color: #111111;
             font-weight: 500;
-            line-height: 1.08;
-            letter-spacing: -0.015em;
+            line-height: 1.04;
+            letter-spacing: -0.02em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .course-label {
-            margin: 0 0 8px;
-            color: #666;
-            font-size: 0.94rem;
-            line-height: 1.35;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
+            margin: 0 0 10px;
+            color: #606060;
+            font-size: 0.98rem;
+            line-height: 1.4;
+            min-height: 0;
+            font-weight: 400;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .case-description {
-            margin: 0;
-            font-size: 0.95rem;
+            margin: 0 0 12px;
+            font-size: 0.98rem;
             line-height: 1.45;
             color: #4b4b4b;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .portfolio-section {
+            max-width: 1360px;
         }
 
         .site-footer {
@@ -625,8 +619,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         @media (max-width: 1024px) {
-            .case-slide {
-                flex: 0 0 calc((100% - 28px) / 2);
+            .portfolio-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
             }
         }
 
@@ -684,11 +679,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .hero-meta-left,
             .hero-meta-center,
             .hero-meta-right {
-        @media (max-width: 1024px) {
-            .case-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-column: auto;
+                grid-row: auto;
+                text-align: center;
             }
-        }
+
             .hero-meta-center {
                 transform: translateY(0);
             }
@@ -697,16 +692,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 align-items: flex-start;
             }
 
-            .case-carousel {
-                padding: 0 12px 12px;
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
             }
 
-            .case-slide {
-                flex: 0 0 100%;
-            }
-
-            .case-nav {
-                display: none;
+            .course-image {
+                margin-bottom: 14px;
             }
 
             .site-footer {
@@ -757,10 +749,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="power-titles" aria-label="Three chapter titles">
         <div>
-            .case-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
+            <h3 class="power-title">1</h3>
+            <p class="power-subtitle">Smaller text below</p>
+        </div>
+        <div>
+            <h3 class="power-title">2</h3>
+            <p class="power-subtitle">Tailor a strategy based on your target audience needs, wants and digital patterns</p>
+        </div>
+        <div>
+            <h3 class="power-title">3</h3>
+            <p class="power-subtitle">Turn that engagement into long-term brand equity</p>
+        </div>
     </section>
     <section class="about-section" id="about-me">
         <div class="about-layout">
@@ -809,7 +808,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="logo-name">VS Code</p>
                 </div>
                 <div class="logo-item">
-                    <img class="lucky-orange-logo" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f34a.svg" alt="Lucky Orange">
+                    <img src="https://www.luckyorange.com/favicon.ico" alt="Lucky Orange">
                     <p class="logo-name">Lucky<br>Orange</p>
                 </div>
                 <div class="logo-item">
@@ -856,6 +855,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="portfolio-section" id="project-cases">
         <h2 class="title">CASES</h2>
+        <div class="portfolio-grid">
+            <div class="course-card">
+                <img class="course-image" src="BA.png" alt="Projektbild 1">
+                <p class="client-label">Boco Atelier</p>
+                <p class="course-label">Performance Marketing + visual identity</p>
+                <p class="case-description">A focused growth journey where paid social, creative testing, and landing-page optimization were combined to scale qualified traffic and conversion impact.</p>
+            </div>
+            <div class="course-card">
+                <img class="course-image" src="S.png" alt="Projektbild 2">
+                <p class="client-label">Akademibokhandeln</p>
+                <p class="course-label">SEO + SEM</p>
+                <p class="case-description">A search-first framework built around intent mapping, technical structure, and content refinement to expand discoverability and strengthen long-term visibility.</p>
+            </div>
+            <div class="course-card">
+                <img class="course-image" src="UYS.png" alt="Projektbild 3">
+                <p class="client-label">Examensarbete</p>
+                <p class="course-label">To be continued</p>
+                <p class="case-description">A data-informed optimization process focused on reducing friction in high-intent moments, improving clarity in messaging, and increasing conversion consistency.</p>
+            </div>
+            <div class="course-card">
+                <img class="course-image" src="ES.png" alt="Projektbild 4">
+                <p class="client-label">Wasa</p>
+                <p class="course-label">x</p>
+                <p class="case-description">Built a content direction around sustainability storytelling to increase message clarity, cultural relevance, and audience resonance across campaign touchpoints.</p>
+            </div>
+            <div class="course-card">
+                <img class="course-image" src="S.png" alt="Projektbild 5">
+                <p class="client-label">Stadium</p>
+                <p class="course-label">CX + CRM</p>
+                <p class="case-description">Designed lifecycle communication and customer journey flows to improve retention signals, strengthen loyalty behavior, and create a more consistent brand experience.</p>
+            </div>
+            <div class="course-card">
+                <img class="course-image" src="S.png" alt="Projektbild 6">
+                <p class="client-label">Under Your Skin</p>
+                <p class="course-label">CRO + Customer Journey/p>
+                <p class="case-description">Created a structured test-and-learn setup for creative, landing pages, and channel mix to speed up learning cycles and improve full-funnel performance outcomes.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="education-section" id="internships">
         <h2 class="title">INTERNSHIPS</h2>
 
@@ -989,7 +1028,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
 
-        if (caseCarousel) {
         window.addEventListener('resize', () => {
             document.querySelectorAll('.edu-item.active .edu-content').forEach((content) => {
                 content.style.maxHeight = `${content.scrollHeight}px`;
