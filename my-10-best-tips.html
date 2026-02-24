@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 10 best tips to ensure scalable growth</title>
+    <style>
+        :root {
+            --text: #000000;
+            --surface: #ffffff;
+            --line: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--surface);
+        }
+
+        .page {
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            padding: 48px 24px;
+        }
+
+        .content {
+            width: min(760px, 100%);
+            border: 1px solid var(--line);
+            padding: clamp(24px, 4vw, 48px);
+            background: #fff;
+        }
+
+        h1 {
+            margin: 0 0 40px;
+            font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
+            font-size: clamp(1.8rem, 4.6vw, 3rem);
+            line-height: 1.02;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .body-text {
+            margin: 0 0 24px;
+            font-size: clamp(1rem, 1.4vw, 1.1rem);
+            line-height: 1.65;
+            max-width: 62ch;
+        }
+
+        .benefits {
+            margin: 0 0 24px;
+            padding-left: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .benefits li {
+            margin-bottom: 8px;
+        }
+
+        .question {
+            margin: 0 0 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .email-form input[type="email"] {
+            flex: 1 1 260px;
+            min-height: 44px;
+            border: 1.5px solid #111;
+            border-radius: 0;
+            padding: 10px 12px;
+            font: inherit;
+        }
+
+        .email-form button {
+            min-height: 44px;
+            padding: 10px 18px;
+            border: 1.5px solid #111;
+            border-radius: 0;
+            background: #f3f4f6;
+            color: #000;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .email-form button:hover {
+            background: #e5e7eb;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 18px;
+            border: 1.5px solid #111;
+            border-radius: 0;
+            background: #f3f4f6;
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .back-link:hover {
+            background: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="content" aria-label="Growth insights">
+            <h1>My 10 best tips to ensure scalable growth</h1>
+            <p class="body-text">I believe growth is the future because it brings creativity, data, and business thinking together in one scalable way of working. With clear goals, continuous testing, and fast learning loops, marketing becomes both more effective and more sustainable. Growth is not only about short-term wins, it is about building a long-term system where each initiative can be measured, improved, and scaled.</p>
+            <ul class="benefits" aria-label="What you get by signing up">
+                <li>A practical framework for sustainable growth.</li>
+                <li>Weekly tips for improving performance and conversion.</li>
+                <li>Real examples of how to test, learn, and scale faster.</li>
+            </ul>
+            <p class="question">Want to know more?</p>
+            <form class="email-form" action="#" method="post">
+                <label for="email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+                <button type="submit">Submit</button>
+            </form>
+            <a class="back-link" href="./index.html">Back to homepage</a>
+        </section>
+    </main>
+</body>
+</html>
