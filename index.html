@@ -459,6 +459,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             max-width: 1200px;
             margin: 64px auto 86px;
             padding: 0 24px;
+            display: grid;
+            gap: 18px;
         }
 
         .between-placeholder-box {
@@ -480,6 +482,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #4a4a4a;
         }
 
+        .tools-kicker {
+            text-align: right;
+        }
+
         .skills-list {
             margin: 0;
             font-family: "Times New Roman", Times, serif;
@@ -491,6 +497,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .skills-list i {
             font-style: italic;
+        }
+
+        .tools-list {
+            margin: 0 0 0 auto;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(1.35rem, 3.2vw, 2.9rem);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            max-width: 26ch;
+            text-align: right;
         }
 
         .education-section h2.title,
@@ -986,8 +1002,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="between-placeholder" aria-label="Wide image placeholder">
         <div class="between-placeholder-box">
-            <p class="skills-kicker">Selected / Competencies</p>
+            <p class="skills-kicker">Competencies</p>
             <p class="skills-list">Search Engine Optimization <i>(Google &amp; LLM)</i> / Performance Marketing / Search Engine Marketing / Conversion Rate Optimization / Customer Relationship Management</p>
+        </div>
+        <div class="between-placeholder-box">
+            <p class="skills-kicker tools-kicker">Tools</p>
+            <p class="tools-list">GA4 / GTM / Shopify / Looker Studio / TikTok Ads / VS Code / Lucky Orange / Meta Ads</p>
         </div>
     </section>
 
