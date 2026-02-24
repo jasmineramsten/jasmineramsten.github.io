@@ -221,6 +221,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 0 24px;
         }
 
+        .hero + .about-section {
+            margin-top: 54px;
+        }
+
         .about-statement {
             max-width: 1200px;
             margin: 70px auto 0;
@@ -416,28 +420,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .about-media-main {
             position: absolute;
-            top: 0;
+            top: 8px;
             right: 0;
-            width: min(76%, 340px);
+            width: min(82%, 380px);
             aspect-ratio: 3 / 4;
-            background: transparent;
-            box-shadow: none;
-            overflow: visible;
-            z-index: 0;
-        }
-
-        .about-media-main::after {
-            content: "";
-            position: absolute;
-            inset: -12px -20px -110px;
-            background: #ffffff;
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
-            z-index: 0;
+            border: 2px solid #d1d5db;
+            background: #f7f7f7;
+            overflow: hidden;
         }
 
         .about-media-main img {
-            position: relative;
-            z-index: 1;
             width: 100%;
             height: 100%;
             display: block;
@@ -458,7 +450,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .between-placeholder {
             max-width: 1200px;
-            margin: 64px auto 86px;
+            margin: 92px auto 86px;
             padding: 0 24px;
             display: grid;
             gap: 18px;
@@ -498,6 +490,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .skills-list i {
             font-style: italic;
+        }
+
+        .skills-list .nowrap {
+            white-space: nowrap;
         }
 
         .tools-list {
@@ -974,14 +970,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section class="about-statement">
-        <p>POWER GREAT BRANDS<br>WITH EVEN GREATER MARKETING</p>
-    </section>
-
-    <section class="power-titles" aria-label="Growth tips link">
-        <p class="power-intro-text">Building a brand is no longer about selling a product, it is as important to create a world around it.<br>Visual identity, digital strategy and audience insights are no longer optional, I arguee that it is the recipce for succsess.<br>Learn more about how I approach growth, explore my perspective on scalable branding</p>
-        <a class="power-link-button" href="#growth-tips">My 10 best tips to ensure scalable growth</a>
-    </section>
     <section class="about-section" id="about-me">
         <div class="about-layout">
             <div class="about-copy">
@@ -997,14 +985,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <section class="about-statement">
+        <p>POWER GREAT BRANDS<br>WITH EVEN GREATER MARKETING</p>
+    </section>
+
+    <section class="power-titles" aria-label="Growth tips link">
+        <p class="power-intro-text">Building a brand is no longer about selling a product, it is as important to create a world around it.<br>Visual identity, digital strategy and audience insights are no longer optional, I arguee that it is the recipce for succsess.<br>Learn more about how I approach growth, explore my perspective on scalable branding</p>
+        <a class="power-link-button" href="#growth-tips">My 10 best tips to ensure scalable growth</a>
+    </section>
+
     <section class="between-placeholder" aria-label="Wide image placeholder">
         <div class="between-placeholder-box">
             <p class="skills-kicker">Competencies</p>
-            <p class="skills-list">Search Engine Optimization <i>(Google &amp; LLM)</i> / Performance Marketing / Search Engine Marketing / Conversion Rate Optimization / Customer Relationship Management</p>
-            <div class="tools-block">
-                <p class="skills-kicker tools-kicker">Tools</p>
-                <p class="tools-list">GA4 / GTM / Shopify / Looker Studio / TikTok Ads / VS Code / Lucky Orange / Meta Ads</p>
-            </div>
+            <p class="skills-list">Brand Startegy<br><span class="nowrap">Search Engine Optimization <i>(Google &amp; LLM)</i></span><br>Performance Marketing<br>Search Engine Marketing<br>Conversion Rate Optimization<br><span class="nowrap">Customer Relationship Management</span></p>
         </div>
     </section>
 
