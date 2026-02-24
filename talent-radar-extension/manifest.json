@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "TalentRadar: Marketing Jobs Alert",
+  "version": "1.0.0",
+  "description": "Tracks new marketing & growth jobs from Remotive + The Muse and sends alerts.",
+  "permissions": [
+    "storage",
+    "notifications",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://remotive.com/*",
+    "https://www.themuse.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

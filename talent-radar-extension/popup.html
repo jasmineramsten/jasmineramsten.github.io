@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TalentRadar</title>
+  <style>
+    body { width: 360px; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif; padding: 14px; background: #f6f7fb; color:#111; }
+    h2 { margin: 0 0 10px; font-size: 16px; }
+    .row { display:flex; gap:8px; }
+    .card { background:#fff; border:1px solid #e6e7ee; border-radius:12px; padding:10px; margin-bottom:10px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .muted { color:#555; font-size:12px; }
+    label { font-size:12px; color:#333; display:block; margin-bottom:6px; }
+    input[type="text"] { width:100%; padding:10px; border-radius:10px; border:1px solid #d7d9e6; outline:none; }
+    input[type="text"]:focus { border-color:#8aa2ff; }
+    button { width:100%; border:none; border-radius:10px; padding:10px; cursor:pointer; font-weight:600; }
+    .btn-primary { background:#2f6fed; color:#fff; }
+    .btn-primary:hover { background:#255bca; }
+    .btn-secondary { background:#eef1ff; color:#173a8a; }
+    .btn-secondary:hover { background:#e3e8ff; }
+    .pill { display:inline-block; font-size:11px; padding:4px 8px; border-radius:999px; background:#eef1ff; color:#173a8a; margin-right:6px; }
+    .job { border-top:1px solid #edf0f6; padding-top:10px; margin-top:10px; }
+    .job:first-child { border-top:none; padding-top:0; margin-top:0; }
+    .title { font-weight:700; font-size:13px; margin:0 0 4px; }
+    .meta { font-size:12px; color:#444; margin:0 0 8px; }
+    .linkrow { display:flex; gap:8px; }
+    .linkbtn { flex:1; text-align:center; padding:8px; border-radius:10px; border:1px solid #d7d9e6; background:#fff; color:#111; text-decoration:none; font-weight:600; font-size:12px; }
+    .linkbtn:hover { background:#f3f5ff; }
+    .small { font-size:11px; color:#666; }
+    .toggle { display:flex; align-items:center; gap:8px; margin-top:8px; }
+    .toggle input { transform: scale(1.1); }
+    .footer { margin-top:10px; font-size:11px; color:#666; }
+  </style>
+</head>
+
+<body>
+  <h2>TalentRadar</h2>
+
+  <div class="card">
+    <div class="row" style="justify-content:space-between;align-items:center;">
+      <div>
+        <div class="pill">Remotive</div>
+        <div class="pill">The Muse</div>
+      </div>
+      <div class="muted" id="lastUpdated">—</div>
+    </div>
+
+    <div style="margin-top:10px;">
+      <label for="keywords">Alert keywords (comma-separated)</label>
+      <input id="keywords" type="text" placeholder="growth, performance marketing, CRM, paid social" />
+      <div class="toggle">
+        <input id="remoteOnly" type="checkbox" checked />
+        <label for="remoteOnly" style="margin:0;">Remote only</label>
+      </div>
+      <div class="row" style="margin-top:10px;">
+        <button id="saveBtn" class="btn-primary" style="flex:1;">Save alert</button>
+        <button id="testBtn" class="btn-secondary" style="flex:1;">Test notification</button>
+      </div>
+      <div class="small" style="margin-top:8px;">
+        Tips: Skriv “Spotify” eller “Warner” som keyword för att highlighta bolag.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="justify-content:space-between;align-items:center;">
+      <strong style="font-size:13px;">Latest matches</strong>
+      <button id="refreshBtn" class="btn-secondary" style="width:auto;padding:8px 10px;">Refresh</button>
+    </div>
+    <div id="jobs"></div>
+  </div>
+
+  <div class="footer">
+    Remotive jobs must link back and mention Remotive as source.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
