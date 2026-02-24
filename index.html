@@ -275,7 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .power-link-button {
             display: inline-block;
-            margin-top: 18px;
+            margin-top: 56px;
             padding: 10px 16px;
             border: 1.5px solid #111;
             background: #f3f4f6;
@@ -422,27 +422,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .about-media {
             position: relative;
             width: 100%;
-            min-height: 560px;
+            min-height: 460px;
         }
 
         .about-media-main {
             position: absolute;
             top: 0;
             right: 0;
-            width: min(78%, 340px);
+            width: min(82%, 380px);
             aspect-ratio: 3 / 4;
             border: 2px solid #d1d5db;
             background: #f7f7f7;
+            overflow: hidden;
         }
 
-        .about-media-secondary {
-            position: absolute;
-            left: 16%;
-            top: 62%;
-            width: min(42%, 190px);
-            aspect-ratio: 1 / 1;
-            border: 2px solid #d1d5db;
-            background: #f7f7f7;
+        .about-media-main img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
         }
 
         .media-placeholder-label {
@@ -465,56 +463,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .between-placeholder-box {
             width: 100%;
-            height: clamp(140px, 20vw, 230px);
-            border: 2px solid #d1d5db;
-            background: #f7f7f7;
-            color: #111;
-            font-size: clamp(0.78rem, 1.05vw, 1rem);
-            letter-spacing: 0.01em;
-            text-transform: none;
-            line-height: 1.5;
-            text-align: center;
-            padding: 14px 22px;
-            display: grid;
-            gap: 14px;
-            align-content: center;
+            border: 1px solid #cfc8be;
+            background: #efe7ff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            color: #1f1f1f;
+            padding: clamp(22px, 4vw, 44px);
+            text-align: left;
         }
 
-        .skills-line-top {
-            margin: 0;
-        }
-
-        .skills-line-logos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-item {
-            display: grid;
-            justify-items: center;
-            gap: 6px;
-            min-width: 66px;
-        }
-
-        .skills-line-logos img {
-            width: 22px;
-            height: 22px;
-            display: block;
-            filter: grayscale(100%) brightness(0);
-        }
-
-        .logo-name {
-            margin: 0;
-            font-size: 0.62rem;
-            letter-spacing: 0.04em;
+        .skills-kicker {
+            margin: 0 0 18px;
+            font-size: 0.74rem;
             font-weight: 700;
-            color: #111;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            line-height: 1.2;
-            text-align: center;
+            color: #4a4a4a;
+        }
+
+        .skills-list {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            font-size: clamp(1.35rem, 3.2vw, 2.9rem);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            max-width: 26ch;
+        }
+
+        .skills-list i {
+            font-style: italic;
         }
 
         .education-section h2.title,
@@ -677,29 +653,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .case-card {
             display: block;
             width: 100%;
-            aspect-ratio: 4 / 3;
-            background: #9d9d9d;
+            aspect-ratio: auto;
+            background: transparent;
             text-decoration: none;
             color: #111;
             position: relative;
             transition: transform 0.35s ease;
         }
 
+        .case-card-media {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.35s ease;
+        }
+
+        .case-card-image-wrap {
+            display: block;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #9d9d9d;
+        }
+
         .cases-slide.is-center .case-card {
-            transform: scale(1.06);
-            background: #8b8b8b;
+            transform: none;
+            background: transparent;
+        }
+
+        .cases-slide.is-center .case-card .case-card-media {
+            filter: grayscale(0%);
         }
 
         .case-card-label {
-            position: absolute;
-            left: 14px;
-            bottom: 12px;
-            margin: 0;
+            position: static;
+            margin: 10px 0 4px;
             font-size: 0.95rem;
-            color: #fff;
+            color: #000;
             font-weight: 600;
             letter-spacing: 0.02em;
-            text-transform: uppercase;
+            text-transform: none;
+        }
+
+        .case-card-subtitle {
+            position: static;
+            margin: 0;
+            font-size: 0.72rem;
+            color: #000;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            text-transform: none;
         }
 
         .carousel-btn {
@@ -744,7 +750,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .site-footer {
             max-width: 1320px;
             margin: 110px auto 0;
-            background: #f6f6f6;
+            background: #efe7ff;
             border: 1px solid #e1e1e1;
             padding: clamp(28px, 3.5vw, 52px);
         }
@@ -756,11 +762,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .contact-hero-title {
             margin: 14px 0 18px;
-            font-size: clamp(2.2rem, 5.8vw, 4.8rem);
+            font-size: clamp(4.4rem, 11.6vw, 9.6rem);
             line-height: 0.92;
             letter-spacing: -0.04em;
             font-weight: 800;
-            color: #000;
+            color: #6d28d9;
             text-transform: uppercase;
         }
 
@@ -850,12 +856,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             .about-media-main {
                 width: min(82%, 320px);
-            }
-
-            .about-media-secondary {
-                left: 8%;
-                top: 60%;
-                width: min(44%, 170px);
             }
 
             .hero-meta {
@@ -978,10 +978,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="about-media" aria-label="Image placeholders">
                 <div class="about-media-main">
-                    <span class="media-placeholder-label">Image Placeholder</span>
-                </div>
-                <div class="about-media-secondary">
-                    <span class="media-placeholder-label">Image Placeholder</span>
+                    <img src="jasmine.jpg" alt="Jasmine Ramsten">
                 </div>
             </div>
         </div>
@@ -989,41 +986,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="between-placeholder" aria-label="Wide image placeholder">
         <div class="between-placeholder-box">
-            <p class="skills-line-top">Search Engine Optimization (Google &amp; LLM) - Performance Marketing - Search Engine Marketing - Conversion Rate Optimization - Customer Relationship Management</p>
-            <div class="skills-line-logos" aria-label="Tools logos">
-                <div class="logo-item">
-                    <img src="https://cdn.simpleicons.org/googleanalytics/000000" alt="GA4">
-                    <p class="logo-name">GA4</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.simpleicons.org/googletagmanager/000000" alt="GTM">
-                    <p class="logo-name">GTM</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.simpleicons.org/shopify/000000" alt="Shopify">
-                    <p class="logo-name">Shopify</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.simpleicons.org/looker/000000" alt="Looker Studio">
-                    <p class="logo-name">Looker Studio</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok Business Ads">
-                    <p class="logo-name">TikTok Ads</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="Visual Studio Code">
-                    <p class="logo-name">VS Code</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://www.luckyorange.com/favicon.ico" alt="Lucky Orange">
-                    <p class="logo-name">Lucky<br>Orange</p>
-                </div>
-                <div class="logo-item">
-                    <img src="https://cdn.simpleicons.org/meta/000000" alt="Meta Ads Manager">
-                    <p class="logo-name">Meta Ads</p>
-                </div>
-            </div>
+            <p class="skills-kicker">Selected / Competencies</p>
+            <p class="skills-list">Search Engine Optimization <i>(Google &amp; LLM)</i> / Performance Marketing / Search Engine Marketing / Conversion Rate Optimization / Customer Relationship Management</p>
         </div>
     </section>
 
@@ -1067,16 +1031,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="carousel-btn prev" type="button" aria-label="Previous case">&#8249;</button>
             <div class="cases-viewport">
                 <div class="cases-track">
-                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 1"><p class="case-card-label">Case 1</p></a></div>
-                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 2"><p class="case-card-label">Case 2</p></a></div>
-                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 3"><p class="case-card-label">Case 3</p></a></div>
-                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 4"><p class="case-card-label">Case 4</p></a></div>
-                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 5"><p class="case-card-label">Case 5</p></a></div>
-                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 6"><p class="case-card-label">Case 6</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 1"><span class="case-card-image-wrap"><img class="case-card-media" src="BA.png" alt="Case 1"></span><p class="case-card-label">Boco Atelier</p><p class="case-card-subtitle">Performance marekting + brand strategy</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 2"><span class="case-card-image-wrap"><img class="case-card-media" src="AB.png" alt="Akademibokahndeln"></span><p class="case-card-label">Akademibokahndeln</p><p class="case-card-subtitle">SEO + trend analysis</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 3"><span class="case-card-image-wrap"><img class="case-card-media" src="ES.png" alt="Wasa"></span><p class="case-card-label">Wasa</p><p class="case-card-subtitle">Fictive digital strategy + audience analysicis</p></a></div>
+                    <div class="cases-slide"><a class="case-card" href="#" aria-label="Open case 4"><span class="case-card-image-wrap"><img class="case-card-media" src="UYS.png" alt="Under Your Skin"></span><p class="case-card-label">Under Your Skin</p><p class="case-card-subtitle">Conversion rate optimization</p></a></div>
                 </div>
             </div>
             <button class="carousel-btn next" type="button" aria-label="Next case">&#8250;</button>
-            <div class="carousel-dots" data-cases-dots></div>
         </div>
     </section>
 
@@ -1166,7 +1127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="footer-inner">
             <div class="footer-main">
                 <div class="footer-left">
-                    <h3 class="contact-hero-title">Contact me</h3>
+                    <h3 class="contact-hero-title">Contact</h3>
                 </div>
                 <div class="footer-right">
                     <div class="connect-row">
@@ -1310,11 +1271,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             nextBtn?.addEventListener('click', () => {
                 current += 1;
                 setPosition(true);
+                refreshCenter();
+                refreshDots();
             });
 
             prevBtn?.addEventListener('click', () => {
                 current -= 1;
                 setPosition(true);
+                refreshCenter();
+                refreshDots();
             });
 
             track.addEventListener('transitionend', () => {
