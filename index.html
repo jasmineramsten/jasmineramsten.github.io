@@ -15,27 +15,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .spotify-float{
   position: fixed;
   right: 18px;
-  bottom: 18px;
+  top: auto;
+  bottom: 24px;
   width: 360px;
   max-width: calc(100vw - 36px);
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  padding: 12px;
-  z-index: 9999;
-}
-
-.spotify-float__header{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-  font-size: 14px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  z-index: 9999;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 320ms ease, transform 360ms ease;
+  will-change: opacity, transform;
 }
 
-.spotify-float__close{
+.spotify-float.is-hidden{
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+}
+
+.spotify-float__toggle{
   width: 32px;
   height: 32px;
   border-radius: 10px;
@@ -43,10 +49,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   background: #ffffff;
   cursor: pointer;
   line-height: 1;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
 }
-.spotify-float__close:hover{
+.spotify-float__toggle:hover{
   background: #f3f4f6;
+}
+
+.spotify-float iframe{
+  display: block;
+}
+
+.spotify-float.is-collapsed{
+  width: auto;
+}
+
+.spotify-float.is-collapsed iframe{
+  display: none;
 }
 
 /* Mobile: gör den mindre */
@@ -54,7 +73,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .spotify-float{
     width: 92vw;
     right: 4vw;
-    bottom: 12px;
+    top: auto;
+    bottom: 16px;
   }
 }
         :root {
@@ -1357,12 +1377,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
-    <!-- Spotify floating player (bottom-right) -->
-<div class="spotify-float" aria-label="Spotify player">
-  <div class="spotify-float__header">
-    <span>Listen</span>
-    <button class="spotify-float__close" type="button" aria-label="Close player">×</button>
-  </div>
+<!-- Spotify floating player (bottom-right) -->
+<div class="spotify-float is-hidden" aria-label="Spotify player">
+  <button class="spotify-float__toggle" type="button" aria-label="Minimize player" aria-expanded="true">▾</button>
 
   <iframe
     style="border-radius:12px"
@@ -1376,13 +1393,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
-  // Close button (hides the box)
-  document.addEventListener("click", (e) => {
-    if (e.target.matches(".spotify-float__close")) {
-      const box = document.querySelector(".spotify-float");
-      if (box) box.style.display = "none";
-    }
-  });
+  // Minimize / expand Spotify box
+  (() => {
+    const box = document.querySelector(".spotify-float");
+    const toggle = document.querySelector(".spotify-float__toggle");
+    if (!box || !toggle) return;
+
+    const setCollapsed = (collapsed) => {
+      box.classList.toggle("is-collapsed", collapsed);
+      toggle.textContent = collapsed ? "▸" : "▾";
+      toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      toggle.setAttribute("aria-label", collapsed ? "Open player" : "Minimize player");
+    };
+
+    toggle.addEventListener("click", () => {
+      setCollapsed(!box.classList.contains("is-collapsed"));
+    });
+  })();
+
+  // Show Spotify box 3s after first scroll
+  (() => {
+    const box = document.querySelector(".spotify-float");
+    if (!box) return;
+
+    let shown = false;
+    const reveal = () => {
+      if (shown) return;
+      shown = true;
+      box.classList.remove("is-hidden");
+      window.removeEventListener("scroll", reveal);
+      window.removeEventListener("touchmove", reveal);
+      window.removeEventListener("wheel", reveal);
+    };
+
+    window.addEventListener("scroll", reveal, { passive: true });
+    window.addEventListener("touchmove", reveal, { passive: true });
+    window.addEventListener("wheel", reveal, { passive: true });
+  })();
 </script>
 </body>
 </html>
