@@ -51,6 +51,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   line-height: 1;
   font-size: 18px;
   font-weight: 700;
+  display: grid;
+  place-items: center;
+  color: #000000;
+}
+.spotify-float__toggle svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
 }
 .spotify-float__toggle:hover{
   background: #f3f4f6;
@@ -67,6 +76,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .spotify-float.is-collapsed iframe{
   display: none;
 }
+
+.spotify-float.is-collapsed .spotify-float__toggle{
+  width: 86px;
+  height: 86px;
+  border-radius: 22px;
+}
+
+.spotify-float.is-collapsed .spotify-float__toggle svg{
+  width: 49px;
+  height: 49px;
+}
+
 
 /* Mobile: gör den mindre */
 @media (max-width: 480px){
@@ -1379,7 +1400,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 <!-- Spotify floating player (bottom-right) -->
 <div class="spotify-float is-hidden" aria-label="Spotify player">
-  <button class="spotify-float__toggle" type="button" aria-label="Minimize player" aria-expanded="true">▾</button>
+  <button class="spotify-float__toggle" type="button" aria-label="Minimize player" aria-expanded="true">&#9662;</button>
 
   <iframe
     style="border-radius:12px"
@@ -1399,9 +1420,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const toggle = document.querySelector(".spotify-float__toggle");
     if (!box || !toggle) return;
 
+    const spotifyIcon = `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm5.503 17.298a.746.746 0 0 1-1.026.25c-2.811-1.718-6.35-2.107-10.518-1.156a.745.745 0 1 1-.331-1.453c4.56-1.042 8.468-.598 11.627 1.333a.745.745 0 0 1 .248 1.026Zm1.464-3.258a.933.933 0 0 1-1.283.313c-3.219-1.979-8.122-2.552-11.932-1.394a.934.934 0 0 1-.543-1.787c4.353-1.321 9.768-.682 13.452 1.581.44.27.578.845.306 1.287Zm.126-3.391c-3.861-2.292-10.233-2.502-13.919-1.403a1.118 1.118 0 1 1-.638-2.143c4.232-1.26 11.271-1.016 15.697 1.611a1.118 1.118 0 1 1-1.14 1.935Z"/>
+      </svg>
+    `;
+
+    const expandedIcon = "&#9662;";
+
     const setCollapsed = (collapsed) => {
       box.classList.toggle("is-collapsed", collapsed);
-      toggle.textContent = collapsed ? "▸" : "▾";
+      toggle.innerHTML = collapsed ? spotifyIcon : expandedIcon;
       toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
       toggle.setAttribute("aria-label", collapsed ? "Open player" : "Minimize player");
     };
