@@ -172,6 +172,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: #e6dcff;
         }
 
+        .top-tool-row {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .top-tool-chip {
+            border: 1px solid #d9d3eb;
+            background: #f7f3ff;
+            color: #111;
+            padding: 8px 10px;
+            font-size: 0.67rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            line-height: 1.2;
+            text-align: center;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         #about-me,
         #education,
         #project-cases,
@@ -939,6 +967,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 padding: 0 18px;
             }
 
+            .top-tool-row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                padding: 0;
+                gap: 7px;
+            }
+
+            .top-tool-chip {
+                font-size: 0.62rem;
+                padding: 7px 8px;
+                min-height: 42px;
+            }
+
             .power-titles {
                 margin-top: 16px;
                 padding: 0 18px;
@@ -1079,6 +1119,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="between-placeholder-box">
             <p class="skills-kicker">Competencies</p>
             <p class="skills-list">Brand Startegy<br><span class="nowrap">Search Engine Optimization <i>(Google &amp; LLM)</i></span><br>Performance Marketing<br>Search Engine Marketing<br>Conversion Rate Optimization<br><span class="nowrap">Customer Relationship Management</span></p>
+        </div>
+        <div class="top-tool-row" aria-label="Tools">
+            <span class="top-tool-chip">Google Analytics</span>
+            <span class="top-tool-chip">Google Tag Manager</span>
+            <span class="top-tool-chip">Looker Studio</span>
+            <span class="top-tool-chip">Lucky Orange</span>
+            <span class="top-tool-chip">Meta Ads Manager</span>
+            <span class="top-tool-chip">Tiktok Ads</span>
+            <span class="top-tool-chip">Visual Studio Code</span>
+            <span class="top-tool-chip">Shopify</span>
         </div>
     </section>
 
