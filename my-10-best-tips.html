@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My 10 best tips to ensure scalable growth</title>
     <style>
         :root {
-            --text: #000000;
+            --text: #111111;
+            --muted: #4b5563;
             --surface: #ffffff;
-            --line: #e5e7eb;
+            --line: #d1d5db;
+            --accent: #111827;
+            --card: #f8fafc;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -24,71 +25,82 @@
 
         .page {
             min-height: 100svh;
-            display: grid;
-            place-items: center;
-            padding: 48px 24px;
+            padding: clamp(28px, 4vw, 56px) 24px;
         }
 
         .content {
-            width: min(760px, 100%);
-            border: 1px solid var(--line);
-            padding: clamp(24px, 4vw, 48px);
-            background: #fff;
+            width: min(1320px, 100%);
+            margin: 0 auto;
+            background: transparent;
+            padding: clamp(8px, 2vw, 18px);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: clamp(20px, 3vw, 40px);
+            align-items: start;
+        }
+
+        .copy-head {
+            margin-bottom: 14px;
         }
 
         h1 {
-            margin: 0 0 40px;
+            margin: 0;
             font-family: "Arial Black", "Impact", "Helvetica Neue", Arial, sans-serif;
-            font-size: clamp(1.8rem, 4.6vw, 3rem);
-            line-height: 1.02;
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            line-height: 1.04;
             text-transform: uppercase;
             letter-spacing: 0.4px;
         }
 
-        .body-text {
-            margin: 0 0 24px;
-            font-size: clamp(1rem, 1.4vw, 1.1rem);
-            line-height: 1.65;
-            max-width: 62ch;
+        .intro {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.35vw, 1.08rem);
+            line-height: 1.62;
+            max-width: 64ch;
         }
 
         .benefits {
-            margin: 0 0 24px;
-            padding-left: 20px;
+            margin: 0 0 18px;
+            padding-left: 18px;
             font-size: 1rem;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
-        .benefits li {
-            margin-bottom: 8px;
-        }
+        .benefits li { margin-bottom: 8px; }
 
-        .question {
-            margin: 0 0 12px;
-            font-size: 0.95rem;
+        .cta-kicker {
+            margin: 0 0 6px;
+            font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .email-form {
+        .cta-title {
+            margin: 0 0 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .download-form {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
 
-        .email-form input[type="email"] {
+        .download-form input[type="email"] {
             flex: 1 1 260px;
-            min-height: 44px;
+            min-height: 46px;
             border: 1.5px solid #111;
             border-radius: 0;
             padding: 10px 12px;
             font: inherit;
         }
 
-        .email-form button {
-            min-height: 44px;
-            padding: 10px 18px;
+        .download-form button {
+            min-height: 46px;
+            padding: 10px 16px;
             border: 1.5px solid #111;
             border-radius: 0;
             background: #f3f4f6;
@@ -98,45 +110,110 @@
             cursor: pointer;
         }
 
-        .email-form button:hover {
-            background: #e5e7eb;
+        .download-form button:hover { background: #e5e7eb; }
+
+        .pdf-wrap {
+            border: 1px solid var(--line);
+            background: var(--card);
+            padding: 14px;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1.414;
+            max-width: 380px;
+            margin-left: auto;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: blur(3px) saturate(0.9);
+            pointer-events: none;
+        }
+
+        .pdf-overlay {
+            position: absolute;
+            inset: 14px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.45));
+            pointer-events: none;
+        }
+
+        .pdf-note {
+            margin: 10px 0 0;
+            font-size: 0.86rem;
+            color: #4b5563;
+            text-align: center;
         }
 
         .back-link {
             display: inline-block;
-            margin-top: 16px;
-            padding: 10px 18px;
-            border: 1.5px solid #111;
-            border-radius: 0;
-            background: #f3f4f6;
-            color: #000;
+            margin-top: 18px;
+            padding: 10px 14px;
+            border: 1px solid #111;
+            color: #111;
             text-decoration: none;
             font-weight: 700;
+            background: #f3f4f6;
         }
 
-        .back-link:hover {
-            background: #e5e7eb;
+        @media (max-width: 960px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .pdf-wrap { aspect-ratio: 1 / 1.414; }
         }
     </style>
 </head>
 <body>
     <main class="page">
-        <section class="content" aria-label="Growth insights">
-            <h1>My 10 best tips to ensure scalable growth</h1>
-            <p class="body-text">I believe growth is the future because it brings creativity, data, and business thinking together in one scalable way of working. With clear goals, continuous testing, and fast learning loops, marketing becomes both more effective and more sustainable. Growth is not only about short-term wins, it is about building a long-term system where each initiative can be measured, improved, and scaled.</p>
-            <ul class="benefits" aria-label="What you get by signing up">
-                <li>A practical framework for sustainable growth.</li>
-                <li>Weekly tips for improving performance and conversion.</li>
-                <li>Real examples of how to test, learn, and scale faster.</li>
-            </ul>
-            <p class="question">Want to know more?</p>
-            <form class="email-form" action="#" method="post">
-                <label for="email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
-                <input id="email" name="email" type="email" placeholder="Enter your email address" required>
-                <button type="submit">Submit</button>
-            </form>
-            <a class="back-link" href="/">Back to portfolio</a>
+        <section class="content" aria-label="Whitepaper download">
+            <div>
+                <div class="copy-head">
+                    <h1>My 10 best tips to ensure scalable growth</h1>
+                </div>
+
+                <p class="intro">This whitepaper gives you a practical and structured view of how to build scalable growth through audience insight, testing, creative direction, and long-term brand thinking.</p>
+
+                <ul class="benefits" aria-label="What it contains">
+                    <li>Clear growth priorities and how to sequence them.</li>
+                    <li>Practical frameworks for digital strategy and optimization.</li>
+                    <li>Examples of how to connect brand building with measurable performance.</li>
+                    <li>Actions you can apply directly in your own growth work.</li>
+                </ul>
+
+                <p class="cta-kicker">Sugen på att veta mer?</p>
+                <p class="cta-title">Ladda ner mina tips</p>
+
+                <form class="download-form" id="download-form" action="#" method="post">
+                    <label for="email" style="position:absolute;left:-9999px;">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="Skriv din mailadress" required>
+                    <button type="submit">Ladda ner</button>
+                </form>
+
+                <a class="back-link" href="/">Back to portfolio</a>
+            </div>
+
+            <div>
+                <div class="pdf-wrap" aria-label="Blurred PDF preview">
+                    <iframe class="pdf-frame" src="10%20tips%20to%20ensure%20scalable%20growth%20-%20whitepaper.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Blurred whitepaper preview"></iframe>
+                    <div class="pdf-overlay"></div>
+                </div>
+                <p class="pdf-note">Download to read the full PDF.</p>
+            </div>
         </section>
     </main>
+
+    <script>
+        const form = document.getElementById('download-form');
+        form?.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = document.getElementById('email');
+            if (!email || !email.checkValidity()) {
+                email?.reportValidity();
+                return;
+            }
+            window.location.href = '10%20tips%20to%20ensure%20scalable%20growth%20-%20whitepaper.pdf';
+        });
+    </script>
 </body>
 </html>
