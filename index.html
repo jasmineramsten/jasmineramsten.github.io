@@ -1114,7 +1114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="power-intro-text">Building a brand is no longer about selling a product, it is as important to create a world around it.<br>Visual identity, digital strategy and audience insights are no longer optional, I arguee that it is the recipce for succsess.<br>Learn more about how I approach growth, explore my perspective on scalable branding</p>
         <a class="power-link-button" href="https://jasmineramsten.github.io/my-10-best-tips.html">My 10 best tips to ensure scalable growth</a>
     </section>
-
+<div id="trend-ticker-container"></div>
     <section class="between-placeholder" aria-label="Wide image placeholder">
         <div class="between-placeholder-box">
             <p class="skills-kicker">Competencies</p>
@@ -1509,6 +1509,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener("touchmove", reveal, { passive: true });
     window.addEventListener("wheel", reveal, { passive: true });
   })();
+async function updateGoogleTrends() {
+    try {
+        const response = await fetch('http://localhost:3000/get-trends');
+        const trends = await response.json();
+        const tickerContainer = document.getElementById('trend-ticker-container');
+        
+        if (tickerContainer && trends.length > 0) {
+            tickerContainer.innerHTML = `
+                <div style="width:100%; background:#f8f9fa; color:#000; padding:20px 0; border-top:1px solid #eee; border-bottom:1px solid #eee; font-family:sans-serif; margin: 20px 0;">
+                    <marquee scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+                        ${trends.map(t => `
+                            <span style="margin-right:60px; font-size:18px;">
+                                <span style="color:#4285F4; font-weight:bold;">#</span> ${t.keyword.toUpperCase()} 
+                                <span style="color:#34a853; font-weight:bold; margin-left:10px;">🚀 ${t.status}</span>
+                            </span>
+                        `).join('')}
+                    </marquee>
+                </div>
+            `;
+        }
+    } catch (err) {
+        console.log("Servern svarar inte än...");
+    }
+}
+
+updateGoogleTrends();
 </script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>TrendSeeker</h2>
+  
+  <div class="search-box">
+    <input type="text" id="query" placeholder="Sök artist eller ämne...">
+    <button id="search-btn">Kolla</button>
+  </div>
+
+  <div id="results" style="display:none;">
+    <div class="card">
+      <h3>Trendanalys</h3>
+      <div id="analysis-content"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Just nu på iTunes</h3>
+    <ul id="itunes-list"></ul>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

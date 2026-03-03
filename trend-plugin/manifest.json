@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "TrendSeeker",
+  "version": "1.0",
+  "description": "Se vad som trendar på Google och iTunes just nu.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "host_permissions": [
+    "https://itunes.apple.com/*",
+    "https://trends.google.com/*"
+  ]
+}
